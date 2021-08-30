@@ -50,8 +50,11 @@ const AxieCard = ({
           rel="noreferrer"
           target="_blank"
         >
-          <div css={[S.relative, S.imageBox, S.w100]}>
-            <Image src={image} css={[S.absolute, S.axieImage]} alt="" />
+          <div
+            tw="flex items-center justify-center"
+            css={[S.relative, S.imageBox, S.w100]}
+          >
+            <Image src={image} width={160 * 1.333} height={160} alt="" />
           </div>
           {name}
         </a>

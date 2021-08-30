@@ -7,6 +7,7 @@ const AxieImage = ({ id, className }) => (
     className={className}
     src={`https://storage.googleapis.com/assets.axieinfinity.com/axies/${id}/axie/axie-full-transparent.png`}
     title={`Axie ${id}`}
+    layout="fill"
     alt={''}
   />
 );
