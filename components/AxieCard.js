@@ -1,6 +1,8 @@
 import React from 'react';
 import _get from 'lodash.get';
 
+import Image from 'next/image';
+
 import AxieGenes from 'components/AxieGenes';
 import AxieIcon from 'components/axie-icon/AxieIcon';
 import AxiePrice from 'components/AxiePrice';
@@ -45,10 +47,11 @@ const AxieCard = ({
         <a
           css={[S.flex, S.flexCol, S.alignCenter, S.textBase]}
           href={`https://marketplace.axieinfinity.com/axie/${id}?referrer=axie.pub`}
+          rel="noreferrer"
           target="_blank"
         >
           <div css={[S.relative, S.imageBox, S.w100]}>
-            <img src={image} css={[S.absolute, S.axieImage]} alt="" />
+            <Image src={image} css={[S.absolute, S.axieImage]} alt="" />
           </div>
           {name}
         </a>

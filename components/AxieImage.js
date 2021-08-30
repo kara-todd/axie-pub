@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Image from 'next/image';
+
 const AxieImage = ({ id, className }) => (
-  <img
+  <Image
     className={className}
     src={`https://storage.googleapis.com/assets.axieinfinity.com/axies/${id}/axie/axie-full-transparent.png`}
     title={`Axie ${id}`}

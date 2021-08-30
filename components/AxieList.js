@@ -137,7 +137,7 @@ const AxieList = () => {
   );
 
   return (
-    <div tw="flex" style={{ height: 'calc(100vh - 50px);' }}>
+    <div tw="flex" style={{ height: 'calc(100vh - 50px)' }}>
       <section tw="flex flex-col h-full p-5 w-72 border-r border-b border-gray-800 overflow-y-auto">
         <h2 tw="text-lg font-bold mb-4">Filters</h2>
 

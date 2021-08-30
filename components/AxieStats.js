@@ -64,6 +64,7 @@ export const AxieStats = ({ stats, className }) => (
   >
     {statList.map((stat) => (
       <abbr
+        key={stat}
         title={_get(labels, stat)}
         css={[S.flex, S.justifyCenter, S.alignCenter, S.p2]}
       >
