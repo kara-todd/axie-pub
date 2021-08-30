@@ -1,0 +1,15 @@
+fragment AxieAuction on Auction {
+  startingPrice
+  endingPrice
+  startingTimestamp
+  endingTimestamp
+  duration
+  timeLeft
+  currentPrice
+  currentPriceUSD
+  suggestedPrice
+  seller
+  listingIndex
+  state
+  __typename
+}

@@ -1,0 +1,33 @@
+fragment AxieBrief on Axie {
+  id
+  # name
+  stage
+  class
+  breedCount
+  image
+  title
+  # battleInfo {
+  #   banned
+  #   __typename
+  # }
+  auction {
+    currentPrice
+    currentPriceUSD
+    __typename
+  }
+  stats {
+    hp
+    morale
+    skill
+    speed
+  }
+  # parts {
+  #   id
+  #   name
+  #   class
+  #   type
+  #   specialGenes
+  #   __typename
+  # }
+  __typename
+}

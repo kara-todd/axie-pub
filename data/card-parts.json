@@ -1,0 +1,2351 @@
+[
+  {
+    "partId": "back-1nd14n-5t4r",
+    "class": "reptile",
+    "name": "1ND14N-5T4R",
+    "specialGenes": "bionic",
+    "type": "back",
+    "cardId": "reptile-back-08",
+    "cardName": "Bulkwark"
+  },
+  {
+    "partId": "back-anemone",
+    "class": "aquatic",
+    "name": "Anemone",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-10",
+    "cardName": "Aqua Vitality"
+  },
+  {
+    "partId": "back-balloon",
+    "class": "bird",
+    "name": "Balloon",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-02",
+    "cardName": "Balloon Pop"
+  },
+  {
+    "partId": "back-bidens",
+    "class": "plant",
+    "name": "Bidens",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-06",
+    "cardName": "Cleanse Scent"
+  },
+  {
+    "partId": "back-blue-moon",
+    "class": "aquatic",
+    "name": "Blue Moon",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-04",
+    "cardName": "Scale Dart"
+  },
+  {
+    "partId": "back-bone-sail",
+    "class": "reptile",
+    "name": "Bone Sail",
+    "specialGenes": "bionic",
+    "type": "back",
+    "cardId": "reptile-back-02",
+    "cardName": "Ivory Chop"
+  },
+  {
+    "partId": "back-buzz-buzz",
+    "class": "bug",
+    "name": "Buzz Buzz",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-06",
+    "cardName": "Bug Noise"
+  },
+  {
+    "partId": "back-candy-canes",
+    "class": "bug",
+    "name": "Candy Canes",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-04",
+    "cardName": "Barb Strike"
+  },
+  {
+    "partId": "back-croc",
+    "class": "reptile",
+    "name": "Croc",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-12",
+    "cardName": "Nile Strike"
+  },
+  {
+    "partId": "back-crystal-hermit",
+    "class": "aquatic",
+    "name": "Crystal Hermit",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-02",
+    "cardName": "Shelter"
+  },
+  {
+    "partId": "back-cupid",
+    "class": "bird",
+    "name": "Cupid",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-04",
+    "cardName": "Heart Break"
+  },
+  {
+    "partId": "back-frozen-bucket",
+    "class": "reptile",
+    "name": "Frozen Bucket",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-08",
+    "cardName": "Bulkwark"
+  },
+  {
+    "partId": "back-furball",
+    "class": "beast",
+    "name": "Furball",
+    "specialGenes": "xmas",
+    "type": "back",
+    "cardId": "beast-back-12",
+    "cardName": "Juggling Balls"
+  },
+  {
+    "partId": "back-garish-worm",
+    "class": "bug",
+    "name": "Garish Worm",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-04",
+    "cardName": "Barb Strike"
+  },
+  {
+    "partId": "back-goldfish",
+    "class": "aquatic",
+    "name": "Goldfish",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "aquatic-back-06",
+    "cardName": "Swift Escape"
+  },
+  {
+    "partId": "back-green-thorns",
+    "class": "reptile",
+    "name": "Green Thorns",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-06",
+    "cardName": "Vine Dagger"
+  },
+  {
+    "partId": "back-hamaya",
+    "class": "beast",
+    "name": "Hamaya",
+    "specialGenes": "xmas-2019",
+    "type": "back",
+    "cardId": "beast-back-08",
+    "cardName": "Revenge Arrow"
+  },
+  {
+    "partId": "back-hasagi",
+    "class": "beast",
+    "name": "Hasagi",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "beast-back-02",
+    "cardName": "Single Combat"
+  },
+  {
+    "partId": "back-hermit",
+    "class": "aquatic",
+    "name": "Hermit",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-02",
+    "cardName": "Shelter"
+  },
+  {
+    "partId": "back-hero",
+    "class": "beast",
+    "name": "Hero",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "beast-back-04",
+    "cardName": "Heroic Reward"
+  },
+  {
+    "partId": "back-indian-star",
+    "class": "reptile",
+    "name": "Indian Star",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-08",
+    "cardName": "Bulkwark"
+  },
+  {
+    "partId": "back-jaguar",
+    "class": "beast",
+    "name": "Jaguar",
+    "specialGenes": "japan",
+    "type": "back",
+    "cardId": "beast-back-06",
+    "cardName": "Nitro Leap"
+  },
+  {
+    "partId": "back-kingfisher",
+    "class": "bird",
+    "name": "Kingfisher",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "bird-back-10",
+    "cardName": "Patient Hunter"
+  },
+  {
+    "partId": "back-mint",
+    "class": "plant",
+    "name": "Mint",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-10",
+    "cardName": "Refresh"
+  },
+  {
+    "partId": "back-origami",
+    "class": "bird",
+    "name": "Origami",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-04",
+    "cardName": "Heart Break"
+  },
+  {
+    "partId": "back-perch",
+    "class": "aquatic",
+    "name": "Perch",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-12",
+    "cardName": "Spinal Tap"
+  },
+  {
+    "partId": "back-pigeon-post",
+    "class": "bird",
+    "name": "Pigeon Post",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-08",
+    "cardName": "Blackmail"
+  },
+  {
+    "partId": "back-pink-turnip",
+    "class": "plant",
+    "name": "Pink Turnip",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-02",
+    "cardName": "Turnip Rocket"
+  },
+  {
+    "partId": "back-pumpkin",
+    "class": "plant",
+    "name": "Pumpkin",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-12",
+    "cardName": "October Treat"
+  },
+  {
+    "partId": "back-raven",
+    "class": "bird",
+    "name": "Raven",
+    "specialGenes": "japan",
+    "type": "back",
+    "cardId": "bird-back-06",
+    "cardName": "Ill-omened"
+  },
+  {
+    "partId": "back-red-ear",
+    "class": "reptile",
+    "name": "Red Ear",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-10",
+    "cardName": "Slippery Shield"
+  },
+  {
+    "partId": "back-risky-beast",
+    "class": "beast",
+    "name": "Risky Beast",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "beast-back-08",
+    "cardName": "Revenge Arrow"
+  },
+  {
+    "partId": "back-ronin",
+    "class": "beast",
+    "name": "Ronin",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "beast-back-02",
+    "cardName": "Single Combat"
+  },
+  {
+    "partId": "back-rugged-sail",
+    "class": "reptile",
+    "name": "Rugged Sail",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-02",
+    "cardName": "Ivory Chop"
+  },
+  {
+    "partId": "back-sandal",
+    "class": "bug",
+    "name": "Sandal",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-08",
+    "cardName": "Bug Splat"
+  },
+  {
+    "partId": "back-scarab",
+    "class": "bug",
+    "name": "Scarab",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-10",
+    "cardName": "Scarab Curse"
+  },
+  {
+    "partId": "back-shiitake",
+    "class": "plant",
+    "name": "Shiitake",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-04",
+    "cardName": "Shroom's Grace"
+  },
+  {
+    "partId": "back-snail-shell",
+    "class": "bug",
+    "name": "Snail Shell",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-02",
+    "cardName": "Sticky Goo"
+  },
+  {
+    "partId": "back-spiky-wing",
+    "class": "bug",
+    "name": "Spiky Wing",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "bug-back-12",
+    "cardName": "Buzzing Wind"
+  },
+  {
+    "partId": "back-sponge",
+    "class": "aquatic",
+    "name": "Sponge",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "aquatic-back-08",
+    "cardName": "Shipwreck"
+  },
+  {
+    "partId": "back-starry-balloon",
+    "class": "bird",
+    "name": "Starry Balloon",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-02",
+    "cardName": "Balloon Pop"
+  },
+  {
+    "partId": "back-starry-shell",
+    "class": "bug",
+    "name": "Starry Shell",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bug-back-02",
+    "cardName": "Sticky Goo"
+  },
+  {
+    "partId": "back-timber",
+    "class": "beast",
+    "name": "Timber",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "beast-back-10",
+    "cardName": "Woodman Power"
+  },
+  {
+    "partId": "back-tri-feather",
+    "class": "bird",
+    "name": "Tri Feather",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "bird-back-12",
+    "cardName": "Triple Threat"
+  },
+  {
+    "partId": "back-tri-spikes",
+    "class": "reptile",
+    "name": "Tri Spikes",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "reptile-back-04",
+    "cardName": "Spike Throw"
+  },
+  {
+    "partId": "back-turnip",
+    "class": "plant",
+    "name": "Turnip",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "plant-back-02",
+    "cardName": "Turnip Rocket"
+  },
+  {
+    "partId": "back-watering-can",
+    "class": "plant",
+    "name": "Watering Can",
+    "specialGenes": "mystic",
+    "type": "back",
+    "cardId": "plant-back-08",
+    "cardName": "Aqua Stock"
+  },
+  {
+    "partId": "back-yakitori",
+    "class": "plant",
+    "name": "Yakitori",
+    "specialGenes": null,
+    "type": "back",
+    "cardId": "plant-back-04",
+    "cardName": "Shroom's Grace"
+  },
+  {
+    "partId": "ears-beetle-spike",
+    "class": "bug",
+    "name": "Beetle Spike",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-belieber",
+    "class": "beast",
+    "name": "Belieber",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-bubblemaker",
+    "class": "aquatic",
+    "name": "Bubblemaker",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-clover",
+    "class": "plant",
+    "name": "Clover",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-curly",
+    "class": "bird",
+    "name": "Curly",
+    "specialGenes": "japan",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-curved-spine",
+    "class": "reptile",
+    "name": "Curved Spine",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-deadly-pogona",
+    "class": "reptile",
+    "name": "Deadly Pogona",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-ear-breathing",
+    "class": "bug",
+    "name": "Ear Breathing",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-early-bird",
+    "class": "bird",
+    "name": "Early Bird",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-earwing",
+    "class": "bug",
+    "name": "Earwing",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-friezard",
+    "class": "reptile",
+    "name": "Friezard",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-gill",
+    "class": "aquatic",
+    "name": "Gill",
+    "specialGenes": "mystic",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-heart-cheek",
+    "class": "bird",
+    "name": "Heart Cheek",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-hollow",
+    "class": "plant",
+    "name": "Hollow",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-inkling",
+    "class": "aquatic",
+    "name": "Inkling",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-innocent-lamb",
+    "class": "beast",
+    "name": "Innocent Lamb",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-karimata",
+    "class": "bird",
+    "name": "Karimata",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-larva",
+    "class": "bug",
+    "name": "Larva",
+    "specialGenes": "mystic",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-leaf-bug",
+    "class": "bug",
+    "name": "Leaf Bug",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-leafy",
+    "class": "plant",
+    "name": "Leafy",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-lotus",
+    "class": "plant",
+    "name": "Lotus",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-maiko",
+    "class": "plant",
+    "name": "Maiko",
+    "specialGenes": "japan",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-merry-lamb",
+    "class": "beast",
+    "name": "Merry Lamb",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-mon",
+    "class": "bug",
+    "name": "Mon",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-nimo",
+    "class": "aquatic",
+    "name": "Nimo",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-nut-cracker",
+    "class": "beast",
+    "name": "Nut Cracker",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-nyan",
+    "class": "beast",
+    "name": "Nyan",
+    "specialGenes": "japan",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-owl",
+    "class": "bird",
+    "name": "Owl",
+    "specialGenes": "xmas",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-peace-maker",
+    "class": "bird",
+    "name": "Peace Maker",
+    "specialGenes": "japan",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-pinecones",
+    "class": "plant",
+    "name": "Pinecones",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-pink-cheek",
+    "class": "bird",
+    "name": "Pink Cheek",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-pogona",
+    "class": "reptile",
+    "name": "Pogona",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-pointy-nyan",
+    "class": "beast",
+    "name": "Pointy Nyan",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-puppy",
+    "class": "beast",
+    "name": "Puppy",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-red-nimo",
+    "class": "aquatic",
+    "name": "Red Nimo",
+    "specialGenes": "xmas-2019",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-risky-bird",
+    "class": "bird",
+    "name": "Risky Bird",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-rosa",
+    "class": "plant",
+    "name": "Rosa",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-sakura",
+    "class": "plant",
+    "name": "Sakura",
+    "specialGenes": "mystic",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-seaslug",
+    "class": "aquatic",
+    "name": "Seaslug",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-sidebarb",
+    "class": "reptile",
+    "name": "Sidebarb",
+    "specialGenes": "mystic",
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-small-frill",
+    "class": "reptile",
+    "name": "Small Frill",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-swirl",
+    "class": "reptile",
+    "name": "Swirl",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-tassels",
+    "class": "bug",
+    "name": "Tassels",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-the-last-leaf",
+    "class": "plant",
+    "name": "The Last Leaf",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-tiny-fan",
+    "class": "aquatic",
+    "name": "Tiny Fan",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-vector",
+    "class": "bug",
+    "name": "Vector",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "ears-zen",
+    "class": "beast",
+    "name": "Zen",
+    "specialGenes": null,
+    "type": "ears",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-blossom",
+    "class": "plant",
+    "name": "Blossom",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-bookworm",
+    "class": "bug",
+    "name": "Bookworm",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-broken-bookworm",
+    "class": "bug",
+    "name": "Broken Bookworm",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-calico-zeal",
+    "class": "beast",
+    "name": "Calico Zeal",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-chubby",
+    "class": "beast",
+    "name": "Chubby",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-clear",
+    "class": "aquatic",
+    "name": "Clear",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-confused",
+    "class": "plant",
+    "name": "Confused",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-crimson-gecko",
+    "class": "reptile",
+    "name": "Crimson Gecko",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-cucumber-slice",
+    "class": "plant",
+    "name": "Cucumber Slice",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-dokuganryu",
+    "class": "reptile",
+    "name": "Dokuganryu",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-dreamy-papi",
+    "class": "plant",
+    "name": "Dreamy Papi",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-gecko",
+    "class": "reptile",
+    "name": "Gecko",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-gero",
+    "class": "aquatic",
+    "name": "Gero",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-icy-gaze",
+    "class": "bird",
+    "name": "Icy Gaze",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-insomnia",
+    "class": "aquatic",
+    "name": "Insomnia",
+    "specialGenes": "japan",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-kabuki",
+    "class": "reptile",
+    "name": "Kabuki",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-kotaro",
+    "class": "bug",
+    "name": "Kotaro?",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-little-owl",
+    "class": "bird",
+    "name": "Little Owl",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-little-peas",
+    "class": "beast",
+    "name": "Little Peas",
+    "specialGenes": "xmas-2019",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-lucas",
+    "class": "bird",
+    "name": "Lucas",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-mavis",
+    "class": "bird",
+    "name": "Mavis",
+    "specialGenes": "japan",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-neo",
+    "class": "bug",
+    "name": "Neo",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-nerdy",
+    "class": "bug",
+    "name": "Nerdy",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-papi",
+    "class": "plant",
+    "name": "Papi",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-puppy",
+    "class": "beast",
+    "name": "Puppy",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-robin",
+    "class": "bird",
+    "name": "Robin",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-scar",
+    "class": "reptile",
+    "name": "Scar",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-sky-mavis",
+    "class": "bird",
+    "name": "Sky Mavis",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-sleepless",
+    "class": "aquatic",
+    "name": "Sleepless",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-snowflakes",
+    "class": "beast",
+    "name": "Snowflakes",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-telescope",
+    "class": "aquatic",
+    "name": "Telescope",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-topaz",
+    "class": "reptile",
+    "name": "Topaz",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-tricky",
+    "class": "reptile",
+    "name": "Tricky",
+    "specialGenes": "mystic",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-yen",
+    "class": "aquatic",
+    "name": "Yen",
+    "specialGenes": null,
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "eyes-zeal",
+    "class": "beast",
+    "name": "Zeal",
+    "specialGenes": "xmas",
+    "type": "eyes",
+    "cardId": null,
+    "cardName": null
+  },
+  {
+    "partId": "horn-5h04l-5t4r",
+    "class": "aquatic",
+    "name": "5H04L-5T4R",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-12",
+    "cardName": "Star Shuriken"
+  },
+  {
+    "partId": "horn-anemone",
+    "class": "aquatic",
+    "name": "Anemone",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-08",
+    "cardName": "Aquaponics"
+  },
+  {
+    "partId": "horn-antenna",
+    "class": "bug",
+    "name": "Antenna",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-04",
+    "cardName": "Bug Signal"
+  },
+  {
+    "partId": "horn-arco",
+    "class": "beast",
+    "name": "Arco",
+    "specialGenes": "japan",
+    "type": "horn",
+    "cardId": "beast-horn-12",
+    "cardName": "Acrobatic"
+  },
+  {
+    "partId": "horn-babylonia",
+    "class": "aquatic",
+    "name": "Babylonia",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-02",
+    "cardName": "Shell Jab"
+  },
+  {
+    "partId": "horn-bamboo-shoot",
+    "class": "plant",
+    "name": "Bamboo Shoot",
+    "specialGenes": "bionic",
+    "type": "horn",
+    "cardId": "plant-horn-02",
+    "cardName": "Bamboo Clan"
+  },
+  {
+    "partId": "horn-beech",
+    "class": "plant",
+    "name": "Beech",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "plant-horn-04",
+    "cardName": "Wooden Stab"
+  },
+  {
+    "partId": "horn-bumpy",
+    "class": "reptile",
+    "name": "Bumpy",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "reptile-horn-12",
+    "cardName": "Overgrow Keratin"
+  },
+  {
+    "partId": "horn-cactus",
+    "class": "plant",
+    "name": "Cactus",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "plant-horn-10",
+    "cardName": "Prickly Trap"
+  },
+  {
+    "partId": "horn-candy-babylonia",
+    "class": "aquatic",
+    "name": "Candy Babylonia",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-02",
+    "cardName": "Shell Jab"
+  },
+  {
+    "partId": "horn-caterpillars",
+    "class": "bug",
+    "name": "Caterpillars",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-06",
+    "cardName": "Grub Surprise"
+  },
+  {
+    "partId": "horn-cerastes",
+    "class": "reptile",
+    "name": "Cerastes",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "reptile-horn-06",
+    "cardName": "Surprise Invasion"
+  },
+  {
+    "partId": "horn-clamshell",
+    "class": "aquatic",
+    "name": "Clamshell",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-06",
+    "cardName": "Clam Slash"
+  },
+  {
+    "partId": "horn-cuckoo",
+    "class": "bird",
+    "name": "Cuckoo",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-04",
+    "cardName": "Cockadoodledoo"
+  },
+  {
+    "partId": "horn-dual-blade",
+    "class": "beast",
+    "name": "Dual Blade",
+    "specialGenes": "mystic",
+    "type": "horn",
+    "cardId": "beast-horn-10",
+    "cardName": "Sinister Strike"
+  },
+  {
+    "partId": "horn-eggshell",
+    "class": "bird",
+    "name": "Eggshell",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-02",
+    "cardName": "Eggbomb"
+  },
+  {
+    "partId": "horn-feather-spear",
+    "class": "bird",
+    "name": "Feather Spear",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-12",
+    "cardName": "Feather Lunge"
+  },
+  {
+    "partId": "horn-golden-bamboo-shoot",
+    "class": "plant",
+    "name": "Golden Bamboo Shoot",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "plant-horn-02",
+    "cardName": "Bamboo Clan"
+  },
+  {
+    "partId": "horn-golden-shell",
+    "class": "bird",
+    "name": "Golden Shell",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-02",
+    "cardName": "Eggbomb"
+  },
+  {
+    "partId": "horn-imp",
+    "class": "beast",
+    "name": "Imp",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-04",
+    "cardName": "Ivory Stab"
+  },
+  {
+    "partId": "horn-incisor",
+    "class": "reptile",
+    "name": "Incisor",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "reptile-horn-10",
+    "cardName": "Disarm"
+  },
+  {
+    "partId": "horn-kendama",
+    "class": "beast",
+    "name": "Kendama",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-04",
+    "cardName": "Ivory Stab"
+  },
+  {
+    "partId": "horn-kestrel",
+    "class": "bird",
+    "name": "Kestrel",
+    "specialGenes": "mystic",
+    "type": "horn",
+    "cardId": "bird-horn-08",
+    "cardName": "Headshot"
+  },
+  {
+    "partId": "horn-lagging",
+    "class": "bug",
+    "name": "Lagging",
+    "specialGenes": "mystic",
+    "type": "horn",
+    "cardId": "bug-horn-02",
+    "cardName": "Mystic Rush"
+  },
+  {
+    "partId": "horn-laggingggggg",
+    "class": "bug",
+    "name": "Laggingggggg",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-02",
+    "cardName": "Mystic Rush"
+  },
+  {
+    "partId": "horn-leaf-bug",
+    "class": "bug",
+    "name": "Leaf Bug",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-12",
+    "cardName": "Disguise"
+  },
+  {
+    "partId": "horn-little-branch",
+    "class": "beast",
+    "name": "Little Branch",
+    "specialGenes": "japan",
+    "type": "horn",
+    "cardId": "beast-horn-02",
+    "cardName": "Branch Charge"
+  },
+  {
+    "partId": "horn-merry",
+    "class": "beast",
+    "name": "Merry",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-06",
+    "cardName": "Merry Legion"
+  },
+  {
+    "partId": "horn-oranda",
+    "class": "aquatic",
+    "name": "Oranda",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-10",
+    "cardName": "Hero's Bane"
+  },
+  {
+    "partId": "horn-p4r451t3",
+    "class": "bug",
+    "name": "P4R451T3",
+    "specialGenes": "mystic",
+    "type": "horn",
+    "cardId": "bug-horn-10",
+    "cardName": "Third Glance"
+  },
+  {
+    "partId": "horn-parasite",
+    "class": "bug",
+    "name": "Parasite",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-10",
+    "cardName": "Third Glance"
+  },
+  {
+    "partId": "horn-pinku-unko",
+    "class": "reptile",
+    "name": "Pinku Unko",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "reptile-horn-02",
+    "cardName": "Poo Fling"
+  },
+  {
+    "partId": "horn-pliers",
+    "class": "bug",
+    "name": "Pliers",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bug-horn-08",
+    "cardName": "Dull Grip"
+  },
+  {
+    "partId": "horn-pocky",
+    "class": "beast",
+    "name": "Pocky",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-08",
+    "cardName": "Sugar Rush"
+  },
+  {
+    "partId": "horn-rose-bud",
+    "class": "plant",
+    "name": "Rose Bud",
+    "specialGenes": "bionic",
+    "type": "horn",
+    "cardId": "plant-horn-06",
+    "cardName": "Healing Aroma"
+  },
+  {
+    "partId": "horn-santas-gift",
+    "class": "plant",
+    "name": "Santa's Gift",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "plant-horn-10",
+    "cardName": "Prickly Trap"
+  },
+  {
+    "partId": "horn-scaly-spear",
+    "class": "reptile",
+    "name": "Scaly Spear",
+    "specialGenes": "mystic",
+    "type": "horn",
+    "cardId": "reptile-horn-04",
+    "cardName": "Scaly Lunge"
+  },
+  {
+    "partId": "horn-scaly-spoon",
+    "class": "reptile",
+    "name": "Scaly Spoon",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "reptile-horn-08",
+    "cardName": "Tiny Catapult"
+  },
+  {
+    "partId": "horn-shoal-star",
+    "class": "aquatic",
+    "name": "Shoal Star",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-12",
+    "cardName": "Star Shuriken"
+  },
+  {
+    "partId": "horn-spruce-spear",
+    "class": "bird",
+    "name": "Spruce Spear",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-12",
+    "cardName": "Feather Lunge"
+  },
+  {
+    "partId": "horn-strawberry-shortcake",
+    "class": "plant",
+    "name": "Strawberry Shortcake",
+    "specialGenes": "xmas-2019",
+    "type": "horn",
+    "cardId": "plant-horn-08",
+    "cardName": "Sweet Party"
+  },
+  {
+    "partId": "horn-teal-shell",
+    "class": "aquatic",
+    "name": "Teal Shell",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "aquatic-horn-04",
+    "cardName": "Deep Sea Gore"
+  },
+  {
+    "partId": "horn-trump",
+    "class": "bird",
+    "name": "Trump",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-06",
+    "cardName": "Air Force One"
+  },
+  {
+    "partId": "horn-umaibo",
+    "class": "beast",
+    "name": "Umaibo",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-08",
+    "cardName": "Sugar Rush"
+  },
+  {
+    "partId": "horn-unko",
+    "class": "reptile",
+    "name": "Unko",
+    "specialGenes": "xmas",
+    "type": "horn",
+    "cardId": "reptile-horn-02",
+    "cardName": "Poo Fling"
+  },
+  {
+    "partId": "horn-watermelon",
+    "class": "plant",
+    "name": "Watermelon",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "plant-horn-12",
+    "cardName": "Seed Bullet"
+  },
+  {
+    "partId": "horn-wing-horn",
+    "class": "bird",
+    "name": "Wing Horn",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "bird-horn-10",
+    "cardName": "Smart Shot"
+  },
+  {
+    "partId": "horn-winter-branch",
+    "class": "beast",
+    "name": "Winter Branch",
+    "specialGenes": null,
+    "type": "horn",
+    "cardId": "beast-horn-02",
+    "cardName": "Branch Charge"
+  },
+  {
+    "partId": "horn-yorishiro",
+    "class": "plant",
+    "name": "Yorishiro",
+    "specialGenes": "japan",
+    "type": "horn",
+    "cardId": "plant-horn-04",
+    "cardName": "Wooden Stab"
+  },
+  {
+    "partId": "mouth-axie-kiss",
+    "class": "beast",
+    "name": "Axie Kiss",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "beast-mouth-08",
+    "cardName": "Death Mark"
+  },
+  {
+    "partId": "mouth-catfish",
+    "class": "aquatic",
+    "name": "Catfish",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "aquatic-mouth-04",
+    "cardName": "Swallow"
+  },
+  {
+    "partId": "mouth-confident",
+    "class": "beast",
+    "name": "Confident",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "beast-mouth-10",
+    "cardName": "Self Rally"
+  },
+  {
+    "partId": "mouth-cute-bunny",
+    "class": "bug",
+    "name": "Cute Bunny",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "bug-mouth-08",
+    "cardName": "Terror Chomp"
+  },
+  {
+    "partId": "mouth-dango",
+    "class": "reptile",
+    "name": "Dango",
+    "specialGenes": "japan",
+    "type": "mouth",
+    "cardId": "reptile-mouth-10",
+    "cardName": "Chomp"
+  },
+  {
+    "partId": "mouth-doubletalk",
+    "class": "bird",
+    "name": "Doubletalk",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bird-mouth-02",
+    "cardName": "Soothing Song"
+  },
+  {
+    "partId": "mouth-feasting-mosquito",
+    "class": "bug",
+    "name": "Feasting Mosquito",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bug-mouth-02",
+    "cardName": "Blood Taste"
+  },
+  {
+    "partId": "mouth-geisha",
+    "class": "aquatic",
+    "name": "Geisha",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "aquatic-mouth-10",
+    "cardName": "Crimson Water"
+  },
+  {
+    "partId": "mouth-goda",
+    "class": "beast",
+    "name": "Goda",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "beast-mouth-04",
+    "cardName": "Piercing Sound"
+  },
+  {
+    "partId": "mouth-herbivore",
+    "class": "plant",
+    "name": "Herbivore",
+    "specialGenes": "japan",
+    "type": "mouth",
+    "cardId": "plant-mouth-08",
+    "cardName": "Vegan Diet"
+  },
+  {
+    "partId": "mouth-humorless",
+    "class": "plant",
+    "name": "Humorless",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "plant-mouth-02",
+    "cardName": "Vegetal Bite"
+  },
+  {
+    "partId": "mouth-hungry-bird",
+    "class": "bird",
+    "name": "Hungry Bird",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "bird-mouth-08",
+    "cardName": "Insectivore"
+  },
+  {
+    "partId": "mouth-kawaii",
+    "class": "bug",
+    "name": "Kawaii",
+    "specialGenes": "japan",
+    "type": "mouth",
+    "cardId": "bug-mouth-08",
+    "cardName": "Terror Chomp"
+  },
+  {
+    "partId": "mouth-kotaro",
+    "class": "reptile",
+    "name": "Kotaro",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "reptile-mouth-04",
+    "cardName": "Kotaro bite"
+  },
+  {
+    "partId": "mouth-lam",
+    "class": "aquatic",
+    "name": "Lam",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "aquatic-mouth-02",
+    "cardName": "Angry Lam"
+  },
+  {
+    "partId": "mouth-lam-handsome",
+    "class": "aquatic",
+    "name": "Lam Handsome",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "aquatic-mouth-02",
+    "cardName": "Angry Lam"
+  },
+  {
+    "partId": "mouth-little-owl",
+    "class": "bird",
+    "name": "Little Owl",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bird-mouth-10",
+    "cardName": "Dark Swoop"
+  },
+  {
+    "partId": "mouth-mosquito",
+    "class": "bug",
+    "name": "Mosquito",
+    "specialGenes": "japan",
+    "type": "mouth",
+    "cardId": "bug-mouth-02",
+    "cardName": "Blood Taste"
+  },
+  {
+    "partId": "mouth-mr-doubletalk",
+    "class": "bird",
+    "name": "Mr. Doubletalk",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bird-mouth-02",
+    "cardName": "Soothing Song"
+  },
+  {
+    "partId": "mouth-nut-cracker",
+    "class": "beast",
+    "name": "Nut Cracker",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "beast-mouth-02",
+    "cardName": "Nut Crack"
+  },
+  {
+    "partId": "mouth-peace-maker",
+    "class": "bird",
+    "name": "Peace Maker",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "bird-mouth-04",
+    "cardName": "Peace Treaty"
+  },
+  {
+    "partId": "mouth-pincer",
+    "class": "bug",
+    "name": "Pincer",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bug-mouth-04",
+    "cardName": "Sunder Claw"
+  },
+  {
+    "partId": "mouth-piranha",
+    "class": "aquatic",
+    "name": "Piranha",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "aquatic-mouth-10",
+    "cardName": "Crimson Water"
+  },
+  {
+    "partId": "mouth-razor-bite",
+    "class": "reptile",
+    "name": "Razor Bite",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "reptile-mouth-08",
+    "cardName": "Why So Serious"
+  },
+  {
+    "partId": "mouth-risky-fish",
+    "class": "aquatic",
+    "name": "Risky Fish",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "aquatic-mouth-08",
+    "cardName": "Fish Hook"
+  },
+  {
+    "partId": "mouth-rudolph",
+    "class": "plant",
+    "name": "Rudolph",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "plant-mouth-04",
+    "cardName": "Drain Bite"
+  },
+  {
+    "partId": "mouth-serious",
+    "class": "plant",
+    "name": "Serious",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "plant-mouth-02",
+    "cardName": "Vegetal Bite"
+  },
+  {
+    "partId": "mouth-silence-whisper",
+    "class": "plant",
+    "name": "Silence Whisper",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "plant-mouth-10",
+    "cardName": "Forest Spirit"
+  },
+  {
+    "partId": "mouth-skull-cracker",
+    "class": "beast",
+    "name": "Skull Cracker",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "beast-mouth-02",
+    "cardName": "Nut Crack"
+  },
+  {
+    "partId": "mouth-square-teeth",
+    "class": "bug",
+    "name": "Square Teeth",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "bug-mouth-10",
+    "cardName": "Mite Bite"
+  },
+  {
+    "partId": "mouth-tiny-carrot",
+    "class": "reptile",
+    "name": "Tiny Carrot",
+    "specialGenes": "xmas",
+    "type": "mouth",
+    "cardId": "reptile-mouth-10",
+    "cardName": "Chomp"
+  },
+  {
+    "partId": "mouth-tiny-turtle",
+    "class": "reptile",
+    "name": "Tiny Turtle",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "reptile-mouth-10",
+    "cardName": "Chomp"
+  },
+  {
+    "partId": "mouth-toothless-bite",
+    "class": "reptile",
+    "name": "Toothless Bite",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "reptile-mouth-02",
+    "cardName": "Sneaky Raid"
+  },
+  {
+    "partId": "mouth-venom-bite",
+    "class": "reptile",
+    "name": "Venom Bite",
+    "specialGenes": "mystic",
+    "type": "mouth",
+    "cardId": "reptile-mouth-02",
+    "cardName": "Sneaky Raid"
+  },
+  {
+    "partId": "mouth-zigzag",
+    "class": "plant",
+    "name": "Zigzag",
+    "specialGenes": null,
+    "type": "mouth",
+    "cardId": "plant-mouth-04",
+    "cardName": "Drain Bite"
+  },
+  {
+    "partId": "tail-ant",
+    "class": "bug",
+    "name": "Ant",
+    "specialGenes": "xmas-2019",
+    "type": "tail",
+    "cardId": "bug-tail-02",
+    "cardName": "Chemical Warfare"
+  },
+  {
+    "partId": "tail-carrot",
+    "class": "plant",
+    "name": "Carrot",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-02",
+    "cardName": "Carrot Hammer"
+  },
+  {
+    "partId": "tail-cattail",
+    "class": "plant",
+    "name": "Cattail",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-04",
+    "cardName": "Cattail Slap"
+  },
+  {
+    "partId": "tail-cloud",
+    "class": "bird",
+    "name": "Cloud",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "bird-tail-08",
+    "cardName": "Puffy Smack"
+  },
+  {
+    "partId": "tail-cottontail",
+    "class": "beast",
+    "name": "Cottontail",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "beast-tail-02",
+    "cardName": "Luna Absorb"
+  },
+  {
+    "partId": "tail-december-surprise",
+    "class": "reptile",
+    "name": "December Surprise",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-08",
+    "cardName": "Jar Barrage"
+  },
+  {
+    "partId": "tail-escaped-gecko",
+    "class": "reptile",
+    "name": "Escaped Gecko",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-02",
+    "cardName": "Critical Escape"
+  },
+  {
+    "partId": "tail-feather-fan",
+    "class": "bird",
+    "name": "Feather Fan",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bird-tail-04",
+    "cardName": "Sunder Armor"
+  },
+  {
+    "partId": "tail-fire-ant",
+    "class": "bug",
+    "name": "Fire Ant",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-02",
+    "cardName": "Chemical Warfare"
+  },
+  {
+    "partId": "tail-fir-trunk",
+    "class": "reptile",
+    "name": "Fir Trunk",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-06",
+    "cardName": "Tiny Swing"
+  },
+  {
+    "partId": "tail-fish-snack",
+    "class": "bug",
+    "name": "Fish Snack",
+    "specialGenes": "xmas",
+    "type": "tail",
+    "cardId": "bug-tail-06",
+    "cardName": "Anesthetic Bait"
+  },
+  {
+    "partId": "tail-gerbil",
+    "class": "beast",
+    "name": "Gerbil",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "beast-tail-12",
+    "cardName": "Gerbil Jump"
+  },
+  {
+    "partId": "tail-gila",
+    "class": "reptile",
+    "name": "Gila",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-10",
+    "cardName": "Neuro Toxin"
+  },
+  {
+    "partId": "tail-granmas-fan",
+    "class": "bird",
+    "name": "Granma's Fan",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "bird-tail-10",
+    "cardName": "Cool Breeze"
+  },
+  {
+    "partId": "tail-grass-snake",
+    "class": "reptile",
+    "name": "Grass Snake",
+    "specialGenes": "xmas-2019",
+    "type": "tail",
+    "cardId": "reptile-tail-12",
+    "cardName": "Venom Spray"
+  },
+  {
+    "partId": "tail-gravel-ant",
+    "class": "bug",
+    "name": "Gravel Ant",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-08",
+    "cardName": "Numbing Lecretion"
+  },
+  {
+    "partId": "tail-hare",
+    "class": "beast",
+    "name": "Hare",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "beast-tail-08",
+    "cardName": "Hare Dagger"
+  },
+  {
+    "partId": "tail-hatsune",
+    "class": "plant",
+    "name": "Hatsune",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-06",
+    "cardName": "Leek Leak"
+  },
+  {
+    "partId": "tail-hot-butt",
+    "class": "plant",
+    "name": "Hot Butt",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-12",
+    "cardName": "Spicy Surprise"
+  },
+  {
+    "partId": "tail-iguana",
+    "class": "reptile",
+    "name": "Iguana",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-04",
+    "cardName": "Scale Dart"
+  },
+  {
+    "partId": "tail-koi",
+    "class": "aquatic",
+    "name": "Koi",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-02",
+    "cardName": "Upstream Swim"
+  },
+  {
+    "partId": "tail-koinobori",
+    "class": "aquatic",
+    "name": "Koinobori",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-02",
+    "cardName": "Upstream Swim"
+  },
+  {
+    "partId": "tail-kuro-koi",
+    "class": "aquatic",
+    "name": "Kuro Koi",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-02",
+    "cardName": "Upstream Swim"
+  },
+  {
+    "partId": "tail-maki",
+    "class": "bug",
+    "name": "Maki",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-06",
+    "cardName": "Anesthetic Bait"
+  },
+  {
+    "partId": "tail-namek-carrot",
+    "class": "plant",
+    "name": "Namek Carrot",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-02",
+    "cardName": "Carrot Hammer"
+  },
+  {
+    "partId": "tail-navaga",
+    "class": "aquatic",
+    "name": "Navaga",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-10",
+    "cardName": "Flanking Smack"
+  },
+  {
+    "partId": "tail-nimo",
+    "class": "aquatic",
+    "name": "Nimo",
+    "specialGenes": "japan",
+    "type": "tail",
+    "cardId": "aquatic-tail-04",
+    "cardName": "Tail Slap"
+  },
+  {
+    "partId": "tail-nut-cracker",
+    "class": "beast",
+    "name": "Nut Cracker",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "beast-tail-10",
+    "cardName": "Nut Throw"
+  },
+  {
+    "partId": "tail-omatsuri",
+    "class": "bird",
+    "name": "Omatsuri",
+    "specialGenes": "japan",
+    "type": "tail",
+    "cardId": "bird-tail-10",
+    "cardName": "Cool Breeze"
+  },
+  {
+    "partId": "tail-post-fight",
+    "class": "bird",
+    "name": "Post Fight",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "bird-tail-12",
+    "cardName": "All-out Shot"
+  },
+  {
+    "partId": "tail-potato-leaf",
+    "class": "plant",
+    "name": "Potato Leaf",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-10",
+    "cardName": "Aqua Deflect"
+  },
+  {
+    "partId": "tail-pupae",
+    "class": "bug",
+    "name": "Pupae",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-10",
+    "cardName": "Grub Explode"
+  },
+  {
+    "partId": "tail-ranchu",
+    "class": "aquatic",
+    "name": "Ranchu",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-08",
+    "cardName": "Water Sphere"
+  },
+  {
+    "partId": "tail-rice",
+    "class": "beast",
+    "name": "Rice",
+    "specialGenes": "japan",
+    "type": "tail",
+    "cardId": "beast-tail-04",
+    "cardName": "Night Steal"
+  },
+  {
+    "partId": "tail-sakura-cottontail",
+    "class": "beast",
+    "name": "Sakura Cottontail",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "beast-tail-02",
+    "cardName": "Luna Absorb"
+  },
+  {
+    "partId": "tail-shiba",
+    "class": "beast",
+    "name": "Shiba",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "beast-tail-06",
+    "cardName": "Rampant Howl"
+  },
+  {
+    "partId": "tail-shrimp",
+    "class": "aquatic",
+    "name": "Shrimp",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-12",
+    "cardName": "Chitin Jump"
+  },
+  {
+    "partId": "tail-snake-jar",
+    "class": "reptile",
+    "name": "Snake Jar",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-08",
+    "cardName": "Jar Barrage"
+  },
+  {
+    "partId": "tail-snowy-swallow",
+    "class": "bird",
+    "name": "Snowy Swallow",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bird-tail-02",
+    "cardName": "Early Bird"
+  },
+  {
+    "partId": "tail-swallow",
+    "class": "bird",
+    "name": "Swallow",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "bird-tail-02",
+    "cardName": "Early Bird"
+  },
+  {
+    "partId": "tail-tadpole",
+    "class": "aquatic",
+    "name": "Tadpole",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "aquatic-tail-06",
+    "cardName": "Black Bubble"
+  },
+  {
+    "partId": "tail-the-last-one",
+    "class": "bird",
+    "name": "The Last One",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bird-tail-06",
+    "cardName": "Risky Feather"
+  },
+  {
+    "partId": "tail-thorny-caterpillar",
+    "class": "bug",
+    "name": "Thorny Caterpillar",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-12",
+    "cardName": "Allergic Reaction"
+  },
+  {
+    "partId": "tail-tiny-dino",
+    "class": "reptile",
+    "name": "Tiny Dino",
+    "specialGenes": "mystic",
+    "type": "tail",
+    "cardId": "reptile-tail-06",
+    "cardName": "Tiny Swing"
+  },
+  {
+    "partId": "tail-twin-tail",
+    "class": "bug",
+    "name": "Twin Tail",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "bug-tail-04",
+    "cardName": "Twin Needle"
+  },
+  {
+    "partId": "tail-wall-gecko",
+    "class": "reptile",
+    "name": "Wall Gecko",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "reptile-tail-02",
+    "cardName": "Critical Escape"
+  },
+  {
+    "partId": "tail-yam",
+    "class": "plant",
+    "name": "Yam",
+    "specialGenes": null,
+    "type": "tail",
+    "cardId": "plant-tail-08",
+    "cardName": "Gas Unleash"
+  }
+]
