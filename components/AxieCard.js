@@ -1,8 +1,6 @@
 import React from 'react';
 import _get from 'lodash.get';
 
-import Image from 'next/image';
-
 import AxieGenes from 'components/AxieGenes';
 import AxieIcon from 'components/axie-icon/AxieIcon';
 import AxiePrice from 'components/AxiePrice';
@@ -54,7 +52,7 @@ const AxieCard = ({
             tw="flex items-center justify-center"
             css={[S.relative, S.imageBox, S.w100]}
           >
-            <Image src={image} width={160 * 1.333} height={160} alt="" />
+            <img src={image} css={[S.absolute, S.axieImage]} alt="" />
           </div>
           {name}
         </a>
