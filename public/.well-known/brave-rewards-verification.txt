@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: axie.pub
+Token: f88461b03c10c7ffb52a808ff6abc442f77d7e591434be347fee0cace84e33b4

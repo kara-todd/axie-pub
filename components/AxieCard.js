@@ -25,59 +25,63 @@ const HeartIcon = (props) => (
 );
 
 const AxieCard = ({
-  cls,
   auction,
-  enableGenes,
+  breedCount,
+  class: axieClass,
+  genes,
   id,
   image,
   name,
+  newGenes,
   stats,
   quality,
-  geneCalc,
-  breedCount,
-}) => (
-  <article css={[S.m0, S.borderGray3, S.cardBg, S.relative]}>
-    <header
-      css={[S.flex, S.flexColRev, S.cardBorder, S.p0]}
-      style={{ borderColor: `var(--color-${cls})` }}
-    >
-      <h2 css={S.m0}>
-        <a
-          css={[S.flex, S.flexCol, S.alignCenter, S.textBase]}
-          href={`https://marketplace.axieinfinity.com/axie/${id}?referrer=axie.pub`}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <div
-            tw="flex items-center justify-center"
-            css={[S.relative, S.imageBox, S.w100]}
+}) => {
+  const cls = (axieClass || 'uknown').toLowerCase();
+
+  return (
+    <article key={id} css={[S.m0, S.borderGray3, S.cardBg, S.relative]}>
+      <header
+        css={[S.flex, S.flexColRev, S.cardBorder, S.p0]}
+        style={{ borderColor: `var(--color-${cls})` }}
+      >
+        <h2 css={S.m0}>
+          <a
+            css={[S.flex, S.flexCol, S.alignCenter, S.textBase]}
+            href={`https://marketplace.axieinfinity.com/axie/${id}?referrer=axie.pub`}
+            rel="noreferrer"
+            target="_blank"
           >
-            <img src={image} css={[S.absolute, S.axieImage]} alt="" />
-          </div>
-          {name}
-        </a>
-      </h2>
-      <div css={[S.flex, S.alignCenter, S.w100]}>
-        <abbr title="Quality" tw="flex items-center" css={[S.px2, S.pt1]}>
-          <AxieIcon cls={cls} /> {quality}%
-        </abbr>
-        <p css={[S.flex, S.alignCenter, S.px2, S.pt1, S.m0]}>
-          <HeartIcon height={16} width={16} css={S.pr1} /> {breedCount}
-        </p>
-        <AxiePrice auction={auction} css={[S.px2, S.pt1, S.m0]} />
-        <p
-          css={[S.m0, S.textSm, S.absolute, S.top0, S.right0, S.p2]}
-          style={{ backgroundColor: `var(--color-${cls})` }}
-        >
-          {`#` + id}
-        </p>
-      </div>
-    </header>
-    <AxieStats stats={stats} />
-    {enableGenes && (
-      <AxieGenes genes={geneCalc} quality={quality} cls={cls} css={[S.w100]} />
-    )}
-  </article>
-);
+            <div
+              tw="flex items-center justify-center"
+              css={[S.relative, S.imageBox, S.w100]}
+            >
+              <img src={image} css={[S.absolute, S.axieImage]} alt="" />
+            </div>
+            {name}
+          </a>
+        </h2>
+        <div css={[S.flex, S.alignCenter, S.w100]}>
+          {quality && (
+            <abbr title="Quality" tw="flex items-center" css={[S.px2, S.pt1]}>
+              <AxieIcon cls={cls} /> {quality}%
+            </abbr>
+          )}
+          <p css={[S.flex, S.alignCenter, S.px2, S.pt1, S.m0]}>
+            <HeartIcon height={16} width={16} css={S.pr1} /> {breedCount}
+          </p>
+          <AxiePrice auction={auction} css={[S.px2, S.pt1, S.m0]} />
+          <p
+            css={[S.m0, S.textSm, S.absolute, S.top0, S.right0, S.p2]}
+            style={{ backgroundColor: `var(--color-${cls})` }}
+          >
+            {`#` + id}
+          </p>
+        </div>
+      </header>
+      <AxieStats stats={stats} />
+      <AxieGenes genes={genes} newGenes={newGenes} cls={cls} css={[S.w100]} />
+    </article>
+  );
+};
 
 export default AxieCard;

@@ -14,7 +14,7 @@ const client = new ApolloClient({
             keyFields: ['id'],
           },
           axies: {
-            keyArgs: false,
+            keyArgs: ['criteria'],
             merge(existing, incoming, { args }) {
               if (!args) {
                 return incoming;

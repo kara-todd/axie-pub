@@ -12,7 +12,9 @@ import RangeSlider from 'components/ui/RangeSlider';
 import tw from 'twin.macro';
 import * as S from 'components/AxieList.styles';
 
-import AXIE_LIST_QUERY from './AxieList.graphql';
+import useAxieList from 'hooks/useAxieList';
+import useFilterByGene from 'hooks/useFilterByGene';
+import usePagination from 'hooks/usePagination';
 
 const { AxieGene } = require('agp-npm/dist/axie-gene');
 
@@ -37,18 +39,21 @@ const filterByQuality =
 const filterByPrice = (max, currency) => (axie) =>
   parseInt(_get(axie, `auction.${currency}`), 10) < max;
 
-const allGenesMatch = (axie, part) => {
+const allGenesMatch = (axie, part, validParts) => {
   const d = _get(axie, `geneCalc.${part}.d.partId`);
   const r1 = _get(axie, `geneCalc.${part}.r1.partId`);
   const r2 = _get(axie, `geneCalc.${part}.r2.partId`);
 
-  return d === r1 && d === r2;
+  return (
+    validParts.includes(d) && validParts.includes(r1) && validParts.includes(r2)
+  );
 };
 
 const checkGenes = (axie, part, criteria) => {
-  const d = _get(axie, `geneCalc.${part}.d.partId`);
-  const isCriteria = _getArray(criteria, 'parts').includes(d);
-  return isCriteria ? allGenesMatch(axie, part) : true;
+  const validParts = _getArray(criteria, 'parts').filter((partId) =>
+    partId.includes(`${part}-`)
+  );
+  return validParts.length ? allGenesMatch(axie, part, validParts) : true;
 };
 
 const parts = ['ears', 'eyes', 'horn', 'mouth', 'back', 'tail'];
@@ -75,64 +80,62 @@ const StyledButton = ({ disabled, ...props }) => (
   />
 );
 
+const PaginationBtn = ({ pg, label }) => (
+  <StyledButton disabled={!pg} onClick={() => setPg(pg)} title={`Page ${pg}`}>
+    {label}
+  </StyledButton>
+);
+
+const Pagination = ({ start, end, prev, next, totalResults }) => (
+  <div tw="flex w-full justify-center items-center mb-4 p-5">
+    <PaginationBtn pg={prev} label="Prev" />
+    <p tw="flex flex-col mx-6">
+      <span>
+        Showing: {start} - {end}
+      </span>{' '}
+      <span>{totalResults} total matches</span>
+    </p>
+    <PaginationBtn pg={next} label="Next" />
+  </div>
+);
+
 const AxieList = () => {
-  const [pg, setPg] = useState(0);
+  // const [pg, setPg] = useState(0);
   const [criteria, setCriteria] = useState({});
   const [enableGenes, setEnableGenes] = useState(true);
-  const [fullGenes, setFullGenes] = useState(false);
+  const [matchR1, setMatchR1] = useState(false);
+  const [matchR2, setMatchR2] = useState(false);
 
-  const [isLoadingMore, setLoadingMore] = useState(false);
-  const { data, loading, error, fetchMore, refetch, ...props } =
-    useQuery(AXIE_LIST_QUERY);
+  // const [isLoadingMore, setLoadingMore] = useState(false);
+  const { axies, loading, total, loadMore } = useAxieList(criteria);
+  const { setPg, items: list, pagination } = usePagination(axies, 25);
+  // const { data, loading, error, fetchMore, refetch } =
+  //   useQuery(AXIE_LIST_QUERY);
 
   // const [maxPrice, setMaxPrice] = useState(800);
   const [minQuality, setMinQuality] = useState(0);
 
-  const totalAxies = parseInt(_get(data, 'axies.total'), 10);
-  const axies = _getArray(data, 'axies.results');
-  const currentAxies = axies.length;
+  // const total = parseInt(_get(data, 'axies.total'), 10);
+  // const axies = _getArray(data, 'axies.results');
+  // const currentAxies = axies.length;
 
-  const axieList = axies
-    .map(addGenes)
-    .filter(filterByQuality([minQuality, 100]))
-    // .filter(filterByPrice(maxPrice, 'currentPriceUSD'))
-    .filter((axie) =>
-      enableGenes && _getArray(criteria, 'parts').length > 0 && fullGenes
-        ? filterFullGene(criteria)(axie)
-        : axie
-    )
-    .sort(sortByPrice);
-
-  const totalPages = Math.ceil(axieList.length / perPage);
-  const nextPg = Math.min(pg + 1, totalPages);
-  const prevPg = Math.max(0, pg - 1);
-
-  useEffect(() => {
-    refetch({
-      from: 0,
-      size: 24,
-      sort: 'PriceAsc',
-      auctionType: 'Sale',
-      criteria,
-    });
-  }, [criteria, refetch]);
+  // const axieList = axies
+  //   .map(addGenes)
+  //   .filter(filterByQuality([minQuality, 100]))
+  //   // .filter(filterByPrice(maxPrice, 'currentPriceUSD'))
+  //   .filter((axie) =>
+  //     enableGenes &&
+  //     _getArray(criteria, 'parts').length > 0 &&
+  //     (matchR1 || matchR2)
+  //       ? filterFullGene(criteria)(axie)
+  //       : axie
+  //   )
+  //   .sort(sortByPrice);
 
   const LoadMoreButton = () => (
-    <StyledButton
-      onClick={async () => {
-        setLoadingMore(true);
-        await fetchMore({
-          variables: {
-            from: currentAxies,
-            size: 100,
-          },
-        });
-        setLoadingMore(false);
-      }}
-      disabled={currentAxies >= totalAxies || isLoadingMore}
-    >
-      {!isLoadingMore && `Load More`}
-      {isLoadingMore && `Loading...`}
+    <StyledButton disabled={loading} onClick={loadMore}>
+      {!loading && `Load More`}
+      {loading && `Loading...`}
     </StyledButton>
   );
 
@@ -153,12 +156,20 @@ const AxieList = () => {
           />
 
           {_getArray(criteria, 'parts').length > 0 && (
-            <ToggleButton
-              label="Match genes"
-              checked={!!fullGenes}
-              onChange={(value) => setFullGenes(value)}
-              tw="mb-4"
-            />
+            <>
+              <ToggleButton
+                label="Match r1 Gene"
+                checked={!!matchR1}
+                onChange={(value) => setMatchR1(value)}
+                tw="mb-4"
+              />
+              <ToggleButton
+                label="Match r2 Gene"
+                checked={!!matchR2}
+                onChange={(value) => setMatchR2(value)}
+                tw="mb-4"
+              />
+            </>
           )}
 
           <RangeSlider
@@ -172,7 +183,7 @@ const AxieList = () => {
         {!loading && (
           <>
             <p tw="mt-4 mb-4 pt-4 border-t border-gray-800">
-              Loaded {axies.length} of {totalAxies} axies
+              Loaded {axies.length} of {total} axies
             </p>
             <LoadMoreButton />
           </>
@@ -202,45 +213,9 @@ const AxieList = () => {
       </section>
 
       <div tw="flex flex-col flex-1">
-        <div tw="flex w-full justify-center items-center mb-4 p-5">
-          <StyledButton
-            disabled={pg < 1}
-            onClick={() => setPg(prevPg)}
-            title={prevPg}
-          >
-            Prev
-          </StyledButton>
-          <p tw="flex flex-col mx-6">
-            <span>
-              Showing: {Math.max(1, pg * 24)} -{' '}
-              {Math.min(axieList.length, nextPg * 24)}
-            </span>{' '}
-            <span>{axieList.length} total matches</span>
-          </p>
-          <StyledButton
-            disabled={nextPg >= totalPages}
-            onClick={() => setPg(nextPg)}
-            title={nextPg}
-          >
-            Next
-          </StyledButton>
-        </div>
-
+        <Pagination {...pagination} />
         <div tw="overflow-y-auto p-5">
-          {!loading && (
-            <div css={S.cardGrid}>
-              {!!axieList.length &&
-                axieList
-                  .slice(perPage * pg, perPage * (pg + 1))
-                  .map((axie) => (
-                    <AxieCard
-                      key={_get(axie, 'id')}
-                      enableGenes={enableGenes}
-                      {...axie}
-                    />
-                  ))}
-            </div>
-          )}
+          {!loading && <div css={S.cardGrid}>{list.map(AxieCard)}</div>}
         </div>
       </div>
     </div>
