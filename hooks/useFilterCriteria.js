@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useEffect, useReducer, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -37,15 +38,20 @@ const reducer = (state, action) => {
           (item) => item !== action.value
         ),
       };
-    case 'maxBreed':
-      return {
-        ...state,
-        breedCount: [_get(state, 'breedCount[0]'), action.value],
-      };
     case 'minBreed':
       return {
         ...state,
         breedCount: [action.value, _get(state, 'breedCount[1]')],
+      };
+    case 'maxBreed':
+      return {
+        ...state,
+        breedCount: [_get(state, 'breedCount[0]', action.value)],
+      };
+    case 'pureness':
+      return {
+        ...state,
+        pureness: [action.value].filter((value) => value !== 'any'),
       };
     case 'reinit':
       return {
@@ -54,7 +60,7 @@ const reducer = (state, action) => {
       };
 
     default:
-      throw new Error();
+      return state;
   }
 };
 
@@ -72,49 +78,36 @@ const objectDiff = (a, b) => {
   }, {});
 };
 
-const useQueryCriteria = () => {
-  const router = useRouter();
-  const qs = _get(router, 'query.criteria');
-  const isValid = typeof qs === 'string' && qs.length;
-  const criteria = isValid ? JSON.parse(qs) : {};
+// const useQueryString = (state, dispatch) => {
+//   const router = useRouter();
+//   const alteredState = objectDiff(initialState, state);
+//   const qs = _get(router, 'query.criteria', JSON.stringify({}));
+//   const stateQS = JSON.stringify(alteredState);
+//   const pathname = router.pathname;
+//   const replace = router.replace;
 
-  return criteria;
-};
+//   const pushUrl = useCallback(
+//     (query) => {
+//       replace({ pathname, query });
+//     },
+//     [replace, pathname]
+//   );
+
+//   useEffect(() => {
+//     if (qs !== stateQS) {
+//       try {
+//         const hasKeys = Object.keys(JSON.parse(stateQS)).length;
+//         pushUrl(hasKeys ? { criteria: stateQS } : undefined);
+//       } catch (e) {
+//         console.error(e);
+//       }
+//     }
+//   }, [stateQS, qs, pushUrl]);
+// };
 
 const useFilterCriteria = () => {
-  const router = useRouter();
-  const [firstLoad, setFirstLoad] = useState(true);
   const [state, dispatch] = useReducer(reducer, initialState);
-  const alteredState = objectDiff(initialState, state);
-  const qs = _get(router, 'query.criteria');
-  const stateQS = JSON.stringify(alteredState);
-  const pathname = router.pathname;
-  const replace = router.replace;
-
-  useEffect(() => {
-    const isValid = typeof qs === 'string' && qs.length;
-    if (isValid) {
-      try {
-        const criteria = isValid ? JSON.parse(qs) : {};
-        dispatch({ type: 'reinit', state: criteria });
-      } catch (e) {
-        console.error(e);
-      }
-      setFirstLoad(false);
-    }
-  }, [qs, dispatch, firstLoad, setFirstLoad]);
-
-  useEffect(() => {
-    if (stateQS !== qs && !firstLoad) {
-      replace({
-        pathname,
-        query: {
-          criteria: stateQS,
-        },
-      });
-    }
-  }, [stateQS, qs, replace, pathname, dispatch, firstLoad]);
-
+  // useQueryString(state, dispatch);
   return [state, dispatch];
 };
 

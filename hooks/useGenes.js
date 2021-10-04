@@ -10,7 +10,7 @@ import cardParts from 'data/card-parts.json';
 
 const { AxieGene } = require('agp-npm/dist/axie-gene');
 
-const slots = ['eyes', 'ears', 'back', 'mouth', 'horn', 'tail'];
+// const slots = ['eyes', 'ears', 'back', 'mouth', 'horn', 'tail'];
 
 const getGeneBitType = () => 256;
 // const getSlotBitType = () => 256;
@@ -92,6 +92,9 @@ export const parseGenes = (genesHex) => {
         r1: getCardData('r1', slot, geneBinary, bitMap),
         r2: getCardData('r2', slot, geneBinary, bitMap),
       },
+      // d: [...genes.d, getCardData('r1', slot, geneBinary, bitMap).partId],
+      // r1: [...genes.r1, getCardData('r1', slot, geneBinary, bitMap).partId],
+      // r2: [...genes.r2, getCardData('r2', slot, geneBinary, bitMap).partId],
     }),
     {}
   );

@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import _get from 'lodash.get';
-import { useQuery } from '@apollo/client';
 
 import _getArray from 'utis/get-array';
 
 import AxieCard from './AxieCard';
 import AxieFilters from './AxieFilters';
 import ToggleButton from 'components/ui/ToggleButton';
-import RangeSlider from 'components/ui/RangeSlider';
 
 import tw from 'twin.macro';
 import * as S from 'components/AxieList.styles';
@@ -16,54 +14,10 @@ import useAxieList from 'hooks/useAxieList';
 import useFilterByGene from 'hooks/useFilterByGene';
 import usePagination from 'hooks/usePagination';
 
-const { AxieGene } = require('agp-npm/dist/axie-gene');
-
-const addGenes = (axie) => {
-  const axieGene = new AxieGene(_get(axie, 'genes'));
-  return {
-    ...axie,
-    geneCalc: axieGene.genes,
-    cls: axieGene.cls,
-    quality: axieGene.getGeneQuality(),
-  };
-};
-
 const sortByQuality = (a, b) => _get(b, 'quality') - _get(a, 'quality');
 const sortByPrice = (a, b) => _get(a, 'currentPrice') - _get(b, 'currentPrice');
-
-const filterByQuality =
-  ([min, max]) =>
-  (axie) =>
-    parseInt(_get(axie, 'quality'), 10) >= min;
-
 const filterByPrice = (max, currency) => (axie) =>
   parseInt(_get(axie, `auction.${currency}`), 10) < max;
-
-const allGenesMatch = (axie, part, validParts) => {
-  const d = _get(axie, `geneCalc.${part}.d.partId`);
-  const r1 = _get(axie, `geneCalc.${part}.r1.partId`);
-  const r2 = _get(axie, `geneCalc.${part}.r2.partId`);
-
-  return (
-    validParts.includes(d) && validParts.includes(r1) && validParts.includes(r2)
-  );
-};
-
-const checkGenes = (axie, part, criteria) => {
-  const validParts = _getArray(criteria, 'parts').filter((partId) =>
-    partId.includes(`${part}-`)
-  );
-  return validParts.length ? allGenesMatch(axie, part, validParts) : true;
-};
-
-const parts = ['ears', 'eyes', 'horn', 'mouth', 'back', 'tail'];
-const filterFullGene = (criteria) => (axie) =>
-  parts.reduce(
-    (isValid, part) => isValid && checkGenes(axie, part, criteria),
-    true
-  );
-
-const perPage = 25;
 
 const StyledButton = ({ disabled, ...props }) => (
   <button
@@ -80,57 +34,41 @@ const StyledButton = ({ disabled, ...props }) => (
   />
 );
 
-const PaginationBtn = ({ pg, label }) => (
-  <StyledButton disabled={!pg} onClick={() => setPg(pg)} title={`Page ${pg}`}>
+const PaginationBtn = ({ pg, label, onClick }) => (
+  <StyledButton
+    disabled={pg === undefined}
+    onClick={onClick}
+    title={`Page ${pg}`}
+  >
     {label}
   </StyledButton>
 );
 
-const Pagination = ({ start, end, prev, next, totalResults }) => (
+const Pagination = ({ start, end, prev, next, totalResults, setPg }) => (
   <div tw="flex w-full justify-center items-center mb-4 p-5">
-    <PaginationBtn pg={prev} label="Prev" />
+    <PaginationBtn pg={prev} onClick={() => setPg(prev)} label="Prev" />
     <p tw="flex flex-col mx-6">
       <span>
         Showing: {start} - {end}
       </span>{' '}
       <span>{totalResults} total matches</span>
     </p>
-    <PaginationBtn pg={next} label="Next" />
+    <PaginationBtn pg={next} onClick={() => setPg(next)} label="Next" />
   </div>
 );
 
 const AxieList = () => {
   // const [pg, setPg] = useState(0);
   const [criteria, setCriteria] = useState({});
-  const [enableGenes, setEnableGenes] = useState(true);
-  const [matchR1, setMatchR1] = useState(false);
-  const [matchR2, setMatchR2] = useState(false);
-
-  // const [isLoadingMore, setLoadingMore] = useState(false);
   const { axies, loading, total, loadMore } = useAxieList(criteria);
-  const { setPg, items: list, pagination } = usePagination(axies, 25);
-  // const { data, loading, error, fetchMore, refetch } =
-  //   useQuery(AXIE_LIST_QUERY);
-
-  // const [maxPrice, setMaxPrice] = useState(800);
-  const [minQuality, setMinQuality] = useState(0);
-
-  // const total = parseInt(_get(data, 'axies.total'), 10);
-  // const axies = _getArray(data, 'axies.results');
-  // const currentAxies = axies.length;
-
-  // const axieList = axies
-  //   .map(addGenes)
-  //   .filter(filterByQuality([minQuality, 100]))
-  //   // .filter(filterByPrice(maxPrice, 'currentPriceUSD'))
-  //   .filter((axie) =>
-  //     enableGenes &&
-  //     _getArray(criteria, 'parts').length > 0 &&
-  //     (matchR1 || matchR2)
-  //       ? filterFullGene(criteria)(axie)
-  //       : axie
-  //   )
-  //   .sort(sortByPrice);
+  const { filterByGenes, matchR1, matchR2, setMatchR1, setMatchR2 } =
+    useFilterByGene(_get(criteria, 'parts'));
+  const [enableGenes, setEnableGenes] = useState(true);
+  const { items: list, pagination } = usePagination(
+    axies.filter(filterByGenes),
+    25
+  );
+  // const [minQuality, setMinQuality] = useState(0);
 
   const LoadMoreButton = () => (
     <StyledButton disabled={loading} onClick={loadMore}>
@@ -149,13 +87,13 @@ const AxieList = () => {
         <section>
           <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">Genes</h3>
           <ToggleButton
-            label="Enable Genes"
+            label="Show Genes"
             checked={!!enableGenes}
             onChange={(value) => setEnableGenes(value)}
             tw="mb-4"
           />
 
-          {_getArray(criteria, 'parts').length > 0 && (
+          {_getArray(criteria, 'parts').length > 0 ? (
             <>
               <ToggleButton
                 label="Match r1 Gene"
@@ -170,14 +108,18 @@ const AxieList = () => {
                 tw="mb-4"
               />
             </>
+          ) : (
+            <p tw="text-xs text-gray-500">
+              You must select parts to filter by genes.
+            </p>
           )}
 
-          <RangeSlider
+          {/* <RangeSlider
             value={minQuality}
             onChange={(value) => setMinQuality(value)}
             formatLabel={(value) => `Min Quality ${value}%`}
             tw="mt-8"
-          />
+          /> */}
         </section>
 
         {!loading && (
@@ -188,17 +130,6 @@ const AxieList = () => {
             <LoadMoreButton />
           </>
         )}
-
-        {/* <div>
-          <label>
-            Max price
-            <input
-              type="text"
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(_get(e, 'target.value'))}
-            />
-          </label>
-        </div> */}
 
         <p tw="mt-auto text-xs">
           Icons made by{' '}
