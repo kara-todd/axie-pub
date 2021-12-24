@@ -5,35 +5,12 @@ import _getArray from 'utis/get-array';
 
 import FilterByClass from './FilterByClass';
 import FilterByPart from './FilterByPart';
+import Select from './ui/Select';
+import Input from './ui/Input';
 
 import useFilterCriteria from 'hooks/useFilterCriteria';
 
 import tw from 'twin.macro';
-
-const Select = ({ options, id, label, value, onChange }) => (
-  <div tw="col-span-6 sm:col-span-3">
-    <label htmlFor={id} tw="block text-sm font-medium text-gray-400">
-      {label}
-    </label>
-    <select
-      id={id}
-      name={id}
-      value={value}
-      tw="px-3 py-2 border transition border-gray-600 bg-gray-900 text-white placeholder-gray-600"
-      onChange={(e) => {
-        const value =
-          e.target.value === 'any' ? 'any' : parseInt(e.target.value, 10);
-        onChange(value);
-      }}
-    >
-      {options.map((o) => (
-        <option key={o} value={o}>
-          {o}
-        </option>
-      ))}
-    </select>
-  </div>
-);
 
 const AxieFilters = ({ criteria, setCriteria }) => {
   const [state, dispatch] = useFilterCriteria(criteria);
@@ -43,6 +20,40 @@ const AxieFilters = ({ criteria, setCriteria }) => {
       setCriteria(state);
     }
   }, [state, setCriteria]);
+
+  const SelectFeatureCount = ({ label, name }) => (
+    <Select
+      options={['any', 1, 2, 3, 4, 5, 6]}
+      label={label}
+      id={name}
+      value={_get(state, `${name}[0]`)}
+      onChange={(value) => dispatch({ type: 'setCount', value, key: name })}
+    />
+  );
+
+  const MinMaxRange = ({ Input, name }) => {
+    const [min, max] = _get(state, name, []);
+    const setRange = (value) =>
+      dispatch({ type: 'setRange', value, key: name });
+
+    return (
+      <div tw="flex">
+        {React.cloneElement(Input, {
+          id: `min-${name}`,
+          label: 'Min',
+          value: min,
+          onChange: (value) => setRange([value, max].map(parseInt)),
+        })}
+        <div tw="w-8" />
+        {React.cloneElement(Input, {
+          id: `max-${name}`,
+          label: 'Max',
+          value: max,
+          onChange: (value) => setRange([min, value].map(parseInt)),
+        })}
+      </div>
+    );
+  };
 
   return (
     <>
@@ -67,35 +78,37 @@ const AxieFilters = ({ criteria, setCriteria }) => {
 
       <section tw="border-b border-gray-800 mb-4 pb-4">
         <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">Breeds</h3>
-        <div tw="flex">
-          <Select
-            options={[0, 1, 2, 3, 4, 5, 6, 7]}
-            label={'Min'}
-            id="minBreed"
-            value={_get(state, 'breedCount[0]')}
-            onChange={(value) => dispatch({ type: 'minBreed', value })}
-          />
-          <div tw="w-8" />
-          <Select
-            options={[0, 1, 2, 3, 4, 5, 6, 7]}
-            label={'Max'}
-            id="maxBreed"
-            value={_get(state, 'breedCount[1]')}
-            onChange={(value) => dispatch({ type: 'maxBreed', value })}
-          />
-        </div>
+        <MinMaxRange
+          name="breedCount"
+          Input={<Select options={[0, 1, 2, 3, 4, 5, 6, 7]} />}
+        />
       </section>
 
       <section tw="border-b border-gray-800 mb-4 pb-4">
-        <Select
+        {/* <Select
           options={['any', 1, 2, 3, 4, 5, 6]}
           label={'Pureness'}
           id="pureness"
-          value={
-            !!_get(state, 'pureness[0]') ? _get(state, 'pureness[0]') : 'any'
-          }
+          value={valueOrAny(_get(state, 'pureness[0]'))}
           onChange={(value) => dispatch({ type: 'pureness', value })}
-        />
+        /> */}
+
+        <SelectFeatureCount label="Pureness" name="pureness" />
+        <SelectFeatureCount label="Japanese" name="numJapan" />
+        <SelectFeatureCount label="Mystic" name="mystic" />
+        <SelectFeatureCount label="Mystic" name="numMystic" />
+      </section>
+
+      <section tw="border-b border-gray-800 mb-4 pb-4">
+        <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">
+          Genetic Purity
+        </h3>
+        <div tw="flex">
+          <MinMaxRange
+            name="purity"
+            Input={<Input tw="w-20" type="number" min="0" max="100" />}
+          />
+        </div>
       </section>
     </>
   );
