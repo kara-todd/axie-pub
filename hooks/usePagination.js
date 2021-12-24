@@ -24,8 +24,6 @@ const usePagination = (list, perPage) => {
   const items = Array.isArray(list) ? list : [];
   const pagination = getPagination(pg, items.length, perPage);
 
-  console.log(pagination);
-
   return {
     items: items.slice(pagination.start, pagination.end),
     pagination: { ...pagination, setPg },

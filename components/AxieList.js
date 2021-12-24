@@ -14,10 +14,8 @@ import useAxieList from 'hooks/useAxieList';
 import useFilterByGene from 'hooks/useFilterByGene';
 import usePagination from 'hooks/usePagination';
 
-const sortByQuality = (a, b) => _get(b, 'quality') - _get(a, 'quality');
-const sortByPrice = (a, b) => _get(a, 'currentPrice') - _get(b, 'currentPrice');
-const filterByPrice = (max, currency) => (axie) =>
-  parseInt(_get(axie, `auction.${currency}`), 10) < max;
+// const sortByPrice = (a, b) => _get(a, 'currentPrice') - _get(b, 'currentPrice');
+// const filterByPrice = (max, currency) => (axie) => parseInt(_get(axie, `auction.${currency}`), 10) < max;
 
 const StyledButton = ({ disabled, ...props }) => (
   <button
@@ -58,7 +56,6 @@ const Pagination = ({ start, end, prev, next, totalResults, setPg }) => (
 );
 
 const AxieList = () => {
-  // const [pg, setPg] = useState(0);
   const [criteria, setCriteria] = useState({});
   const { axies, loading, total, loadMore } = useAxieList(criteria);
   const { filterByGenes, matchR1, matchR2, setMatchR1, setMatchR2 } =
@@ -68,7 +65,6 @@ const AxieList = () => {
     axies.filter(filterByGenes),
     25
   );
-  // const [minQuality, setMinQuality] = useState(0);
 
   const LoadMoreButton = () => (
     <StyledButton disabled={loading} onClick={loadMore}>
@@ -93,6 +89,9 @@ const AxieList = () => {
             tw="mb-4"
           />
 
+          <h3 tw="text-gray-500 uppercase font-bold text-xs mt-8 mb-4">
+            Filter by Genes
+          </h3>
           {_getArray(criteria, 'parts').length > 0 ? (
             <>
               <ToggleButton
@@ -113,13 +112,6 @@ const AxieList = () => {
               You must select parts to filter by genes.
             </p>
           )}
-
-          {/* <RangeSlider
-            value={minQuality}
-            onChange={(value) => setMinQuality(value)}
-            formatLabel={(value) => `Min Quality ${value}%`}
-            tw="mt-8"
-          /> */}
         </section>
 
         {!loading && (
@@ -131,7 +123,7 @@ const AxieList = () => {
           </>
         )}
 
-        <p tw="mt-auto text-xs">
+        <p tw="mt-auto text-gray-700 text-[10px]">
           Icons made by{' '}
           <a href="https://www.freepik.com" title="Freepik">
             Freepik

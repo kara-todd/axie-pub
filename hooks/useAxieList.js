@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import _getArray from 'utis/get-array';
 
 const AXIE_LIST_QUERY = gql`
-  query GetAxieBriefList(
+  query GetAxieBriefListGetAxieBriefList(
     $auctionType: AuctionType
     $criteria: AxieSearchCriteria
     $from: Int
@@ -19,6 +19,7 @@ const AXIE_LIST_QUERY = gql`
       owner: $owner
       auctionType: $auctionType
       criteria: $criteria
+      filterStuckAuctions: true
     ) {
       total
       results {
@@ -54,6 +55,7 @@ const useAxieList = (criteria) => {
       size: 100,
       sort: 'PriceAsc',
       auctionType: 'Sale',
+      owner: null,
       criteria,
     },
   });
