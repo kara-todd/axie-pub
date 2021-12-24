@@ -23,11 +23,14 @@ const AxieFilters = ({ criteria, setCriteria }) => {
 
   const SelectFeatureCount = ({ label, name }) => (
     <Select
+      tw="mb-4"
       options={['any', 1, 2, 3, 4, 5, 6]}
       label={label}
       id={name}
-      value={_get(state, `${name}[0]`)}
-      onChange={(value) => dispatch({ type: 'setCount', value, key: name })}
+      value={!!_get(state, `${name}[0]`) ? _get(state, `${name}[0]`) : 'any'}
+      onChange={(value) => {
+        dispatch({ type: 'setCount', value: [value], key: name });
+      }}
     />
   );
 
@@ -77,26 +80,18 @@ const AxieFilters = ({ criteria, setCriteria }) => {
       </div>
 
       <section tw="border-b border-gray-800 mb-4 pb-4">
+        <SelectFeatureCount label="Pureness" name="pureness" />
+        <SelectFeatureCount label="Japanese" name="numJapan" />
+        <SelectFeatureCount label="Mystic" name="numMystic" />
+        <SelectFeatureCount label="Christmas" name="numXmas" />
+      </section>
+
+      <section tw="border-b border-gray-800 mb-4 pb-4">
         <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">Breeds</h3>
         <MinMaxRange
           name="breedCount"
           Input={<Select options={[0, 1, 2, 3, 4, 5, 6, 7]} />}
         />
-      </section>
-
-      <section tw="border-b border-gray-800 mb-4 pb-4">
-        {/* <Select
-          options={['any', 1, 2, 3, 4, 5, 6]}
-          label={'Pureness'}
-          id="pureness"
-          value={valueOrAny(_get(state, 'pureness[0]'))}
-          onChange={(value) => dispatch({ type: 'pureness', value })}
-        /> */}
-
-        <SelectFeatureCount label="Pureness" name="pureness" />
-        <SelectFeatureCount label="Japanese" name="numJapan" />
-        <SelectFeatureCount label="Mystic" name="mystic" />
-        <SelectFeatureCount label="Mystic" name="numMystic" />
       </section>
 
       <section tw="border-b border-gray-800 mb-4 pb-4">

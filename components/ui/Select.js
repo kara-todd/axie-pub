@@ -5,8 +5,8 @@ import _getArray from 'utis/get-array';
 
 import tw from 'twin.macro';
 
-const Select = ({ options, id, label, value, onChange, multiple }) => (
-  <div tw="col-span-6 sm:col-span-3">
+const Select = ({ className, options, id, label, value, onChange }) => (
+  <div tw="col-span-6 sm:col-span-3" className={className}>
     <label htmlFor={id} tw="block text-sm font-medium text-gray-400">
       {label}
     </label>
@@ -20,7 +20,6 @@ const Select = ({ options, id, label, value, onChange, multiple }) => (
           e.target.value === 'any' ? 'any' : parseInt(e.target.value, 10);
         onChange(value);
       }}
-      multiple={multiple}
     >
       {options.map((o) => (
         <option key={o} value={o}>
