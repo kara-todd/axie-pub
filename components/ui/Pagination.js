@@ -22,9 +22,11 @@ const Pagination = ({
   <div className="flex w-full justify-center items-center mb-4 p-5">
     <PagerBtn pg={prev} onClick={() => setPg(prev)} label="Prev" />
     <p className="flex flex-col text-center mx-6">
-      <span>
-        Showing: {start} - {end} of {totalResults}
-      </span>{' '}
+      {!!totalResults && (
+        <span>
+          Showing: {start} - {end} of {totalResults}
+        </span>
+      )}
       {children}
     </p>
     <PagerBtn pg={next} onClick={() => setPg(next)} label="Next" />

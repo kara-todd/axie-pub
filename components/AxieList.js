@@ -88,9 +88,11 @@ const AxieList = () => {
       <div className="flex flex-col flex-1">
         <Pagination {...pagination}>
           <span>
-            <span className="text-xs mt-2 text-gray-500">
-              {total} total matches
-            </span>
+            {!loading && (
+              <span className="text-xs mt-2 text-gray-500">
+                {total} total matches
+              </span>
+            )}
             <button
               disabled={loading}
               onClick={loadMore}
@@ -101,7 +103,7 @@ const AxieList = () => {
           </span>
         </Pagination>
         <div className="overflow-y-auto p-5">
-          {(!loading || list.length) && (
+          {(!loading || !!list.length) && (
             <div className="grid gap-6 grid-cols-auto-fill-cards">
               {list.map(AxieCard)}
             </div>

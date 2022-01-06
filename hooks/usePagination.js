@@ -10,7 +10,7 @@ const getPagination = (pg, items, perPage) => {
 
   return {
     pg,
-    start: Math.max(1, pg * perPage),
+    start: total > 0 ? Math.max(1, pg * perPage) : 0,
     end: Math.min(items, next * perPage),
     totalResults: items,
     next: next >= total ? undefined : next,
