@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
-import tw from 'twin.macro';
-
 // Credit to: Lukas Hermann
 // https://codepen.io/lhermann/pen/EBGZRZ
 const ToggleButton = ({ label, checked, onChange, className }) => {
   const [isChecked, setChecked] = useState(checked);
+  const bgColor = !isChecked ? 'bg-gray-400' : 'bg-green-600';
+  const posX = !isChecked ? 'translate-x-0' : 'translate-x-full';
 
   return (
-    <div tw="flex items-center w-full" className={className}>
-      <label tw="flex items-center cursor-pointer">
-        <div tw="relative">
+    <div className="flex items-center w-full">
+      <label className="flex items-center cursor-pointer">
+        <div className="relative">
           <input
             type="checkbox"
-            tw="sr-only"
+            className="sr-only"
             checked={isChecked}
             value={isChecked}
             onChange={() => {
@@ -23,16 +23,12 @@ const ToggleButton = ({ label, checked, onChange, className }) => {
               }
             }}
           />
+          <div className={`block w-10 h-6 rounded-full ${bgColor}`}></div>
           <div
-            tw="block w-10 h-6 rounded-full"
-            css={!isChecked ? tw`bg-gray-400` : tw`bg-green-600`}
-          ></div>
-          <div
-            tw="transform absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"
-            css={!isChecked ? tw`translate-x-0` : tw`translate-x-full`}
+            className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition ${posX}`}
           />
         </div>
-        {label && <div tw="ml-3 text-gray-400">{label}</div>}
+        {label && <div className="ml-3 text-gray-400">{label}</div>}
       </label>
     </div>
   );

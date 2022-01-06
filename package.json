@@ -2,11 +2,7 @@
   "name": "axie-pub",
   "version": "0.1.0",
   "private": true,
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion"
-    }
-  },
+  "babelMacros": {},
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -37,14 +33,13 @@
     "use-query-state": "^1.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.3",
+    "autoprefixer": "^10.4.1",
     "babel-plugin-macros": "^3.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "postcss": "^8.3.6",
+    "postcss": "^8.4.5",
     "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.8",
-    "twin.macro": "^2.7.0"
+    "tailwindcss": "^3.0.11"
   }
 }

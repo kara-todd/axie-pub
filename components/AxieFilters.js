@@ -10,8 +10,6 @@ import Input from './ui/Input';
 
 import useFilterCriteria from 'hooks/useFilterCriteria';
 
-import tw from 'twin.macro';
-
 const AxieFilters = ({ criteria, setCriteria }) => {
   const [state, dispatch] = useFilterCriteria(criteria);
 
@@ -23,7 +21,7 @@ const AxieFilters = ({ criteria, setCriteria }) => {
 
   const SelectFeatureCount = ({ label, name }) => (
     <Select
-      tw="mb-4"
+      className="mb-4"
       options={['any', 1, 2, 3, 4, 5, 6]}
       label={label}
       id={name}
@@ -40,14 +38,14 @@ const AxieFilters = ({ criteria, setCriteria }) => {
       dispatch({ type: 'setRange', value, key: name });
 
     return (
-      <div tw="flex">
+      <div className="flex">
         {React.cloneElement(Input, {
           id: `min-${name}`,
           label: 'Min',
           value: min,
           onChange: (value) => setRange([value, max].map(parseInt)),
         })}
-        <div tw="w-8" />
+        <div className="w-8" />
         {React.cloneElement(Input, {
           id: `max-${name}`,
           label: 'Max',
@@ -60,7 +58,7 @@ const AxieFilters = ({ criteria, setCriteria }) => {
 
   return (
     <>
-      <div tw="relative z-20">
+      <div className="relative z-20">
         <FilterByClass
           selected={_getArray(state, 'classes')}
           onAdd={(value) => dispatch({ type: 'add', key: 'classes', value })}
@@ -79,29 +77,31 @@ const AxieFilters = ({ criteria, setCriteria }) => {
         />
       </div>
 
-      <section tw="border-b border-gray-800 mb-4 pb-4">
+      <section className="border-b border-gray-800 mb-4 pb-4">
         <SelectFeatureCount label="Pureness" name="pureness" />
         <SelectFeatureCount label="Japanese" name="numJapan" />
         <SelectFeatureCount label="Mystic" name="numMystic" />
         <SelectFeatureCount label="Christmas" name="numXmas" />
       </section>
 
-      <section tw="border-b border-gray-800 mb-4 pb-4">
-        <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">Breeds</h3>
+      <section className="border-b border-gray-800 mb-4 pb-4">
+        <h3 className="text-gray-500 uppercase font-bold text-xs mb-4">
+          Breeds
+        </h3>
         <MinMaxRange
           name="breedCount"
           Input={<Select options={[0, 1, 2, 3, 4, 5, 6, 7]} />}
         />
       </section>
 
-      <section tw="border-b border-gray-800 mb-4 pb-4">
-        <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">
+      <section className="border-b border-gray-800 mb-4 pb-4">
+        <h3 className="text-gray-500 uppercase font-bold text-xs mb-4">
           Genetic Purity
         </h3>
-        <div tw="flex">
+        <div className="flex">
           <MinMaxRange
             name="purity"
-            Input={<Input tw="w-20" type="number" min="0" max="100" />}
+            Input={<Input className="w-20" type="number" min="0" max="100" />}
           />
         </div>
       </section>

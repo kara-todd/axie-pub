@@ -6,7 +6,6 @@ import AxieIcon from 'components/axie-icon/AxieIcon';
 import AxiePrice from 'components/AxiePrice';
 import AxieStats from 'components/AxieStats';
 
-import tw from 'twin.macro';
 import * as S from 'components/AxieCard.styles';
 
 const HeartIcon = (props) => (
@@ -52,7 +51,7 @@ const AxieCard = ({
             target="_blank"
           >
             <div
-              tw="flex items-center justify-center"
+              className="flex items-center justify-center"
               css={[S.relative, S.imageBox, S.w100]}
             >
               <img src={image} css={[S.absolute, S.axieImage]} alt="" />
@@ -62,7 +61,11 @@ const AxieCard = ({
         </h2>
         <div css={[S.flex, S.alignCenter, S.w100]}>
           {quality && (
-            <abbr title="Quality" tw="flex items-center" css={[S.px2, S.pt1]}>
+            <abbr
+              title="Quality"
+              className="flex items-center"
+              css={[S.px2, S.pt1]}
+            >
               <AxieIcon cls={cls} /> {quality}%
             </abbr>
           )}

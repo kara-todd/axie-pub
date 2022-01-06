@@ -7,7 +7,6 @@ import AxieCard from './AxieCard';
 import AxieFilters from './AxieFilters';
 import ToggleButton from 'components/ui/ToggleButton';
 
-import tw from 'twin.macro';
 import * as S from 'components/AxieList.styles';
 
 import useAxieList from 'hooks/useAxieList';
@@ -19,14 +18,12 @@ import usePagination from 'hooks/usePagination';
 
 const StyledButton = ({ disabled, ...props }) => (
   <button
-    tw={
-      'px-5 py-2 relative rounded transition border text-white border-gray-200'
-    }
-    css={[
+    className={[
+      'px-5 py-2 relative rounded transition border text-white border-gray-200',
       disabled
-        ? tw`opacity-25 cursor-not-allowed`
-        : tw`focus:outline-none active:border-gray-300 active:bg-gray-600 hover:bg-gray-400 hover:border-gray-100`,
-    ]}
+        ? `opacity-25 cursor-not-allowed`
+        : `focus:outline-none active:border-gray-300 active:bg-gray-600 hover:bg-gray-400 hover:border-gray-100`,
+    ].join(' ')}
     disabled={disabled}
     {...props}
   />
@@ -43,9 +40,9 @@ const PaginationBtn = ({ pg, label, onClick }) => (
 );
 
 const Pagination = ({ start, end, prev, next, totalResults, setPg }) => (
-  <div tw="flex w-full justify-center items-center mb-4 p-5">
+  <div className="flex w-full justify-center items-center mb-4 p-5">
     <PaginationBtn pg={prev} onClick={() => setPg(prev)} label="Prev" />
-    <p tw="flex flex-col mx-6">
+    <p className="flex flex-col mx-6">
       <span>
         Showing: {start} - {end}
       </span>{' '}
@@ -74,22 +71,24 @@ const AxieList = () => {
   );
 
   return (
-    <div tw="flex" style={{ height: 'calc(100vh - 50px)' }}>
-      <section tw="flex flex-col h-full p-5 w-72 border-r border-b border-gray-800 overflow-y-auto">
-        <h2 tw="text-lg font-bold mb-4">Filters</h2>
+    <div className="flex" style={{ height: 'calc(100vh - 50px)' }}>
+      <section className="flex flex-col h-full p-5 w-72 border-r border-b border-gray-800 overflow-y-auto">
+        <h2 className="text-lg font-bold mb-4">Filters</h2>
 
         <AxieFilters setCriteria={setCriteria} />
 
         <section>
-          <h3 tw="text-gray-500 uppercase font-bold text-xs mb-4">Genes</h3>
+          <h3 className="text-gray-500 uppercase font-bold text-xs mb-4">
+            Genes
+          </h3>
           <ToggleButton
             label="Show Genes"
             checked={!!enableGenes}
             onChange={(value) => setEnableGenes(value)}
-            tw="mb-4"
+            className="mb-4"
           />
 
-          <h3 tw="text-gray-500 uppercase font-bold text-xs mt-8 mb-4">
+          <h3 className="text-gray-500 uppercase font-bold text-xs mt-8 mb-4">
             Filter by Genes
           </h3>
           {_getArray(criteria, 'parts').length > 0 ? (
@@ -98,17 +97,17 @@ const AxieList = () => {
                 label="Match r1 Gene"
                 checked={!!matchR1}
                 onChange={(value) => setMatchR1(value)}
-                tw="mb-4"
+                className="mb-4"
               />
               <ToggleButton
                 label="Match r2 Gene"
                 checked={!!matchR2}
                 onChange={(value) => setMatchR2(value)}
-                tw="mb-4"
+                className="mb-4"
               />
             </>
           ) : (
-            <p tw="text-xs text-gray-500">
+            <p className="text-xs text-gray-500">
               You must select parts to filter by genes.
             </p>
           )}
@@ -116,14 +115,14 @@ const AxieList = () => {
 
         {!loading && (
           <>
-            <p tw="mt-4 mb-4 pt-4 border-t border-gray-800">
+            <p className="mt-4 mb-4 pt-4 border-t border-gray-800">
               Loaded {axies.length} of {total} axies
             </p>
             <LoadMoreButton />
           </>
         )}
 
-        <p tw="mt-auto text-gray-700 text-[10px]">
+        <p className="mt-auto text-gray-700 text-[10px]">
           Icons made by{' '}
           <a href="https://www.freepik.com" title="Freepik">
             Freepik
@@ -135,9 +134,9 @@ const AxieList = () => {
         </p>
       </section>
 
-      <div tw="flex flex-col flex-1">
+      <div className="flex flex-col flex-1">
         <Pagination {...pagination} />
-        <div tw="overflow-y-auto p-5">
+        <div className="overflow-y-auto p-5">
           {!loading && <div css={S.cardGrid}>{list.map(AxieCard)}</div>}
         </div>
       </div>

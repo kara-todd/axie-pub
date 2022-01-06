@@ -1,6 +1,5 @@
 import React from 'react';
 import { css, Global } from '@emotion/react';
-import { GlobalStyles as BaseStyles } from 'twin.macro';
 
 const base = css`
   :root {
@@ -54,21 +53,6 @@ const base = css`
     --color-black: #000000;
   }
 
-  *,
-  *:before,
-  *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-  }
-
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    line-height: 1.5;
-  }
-
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -85,11 +69,6 @@ const base = css`
   }
 `;
 
-const GlobalStyles = () => (
-  <>
-    <Global styles={base} />
-    <BaseStyles />
-  </>
-);
+const GlobalStyles = () => <Global styles={base} />;
 
 export default GlobalStyles;

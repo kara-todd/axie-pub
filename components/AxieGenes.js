@@ -4,7 +4,6 @@ import _get from 'lodash.get';
 import AxieIconPart from 'components/axie-icon/AxieIconPart';
 import { parseGenes } from 'hooks/useGenes';
 
-import tw from 'twin.macro';
 import * as S from 'components/AxieGenes.styles';
 
 // const { AxieGene } = require('agp-npm/dist/axie-gene');
@@ -61,7 +60,7 @@ const AxieGenes = ({ genes, className }) => {
   // const traits = parts.map((part) => [part, _get(axieGene, part)]);
 
   return (
-    <div tw="flex flex-col">
+    <div className="flex flex-col">
       <section>
         <AxieParts
           parts={Object.entries(parseGenes(genes).parts)}
