@@ -6,9 +6,6 @@ import bodyParts from 'data/card-parts.json';
 
 import AxieIconPart from 'components/axie-icon/AxieIconPart';
 
-import tw from 'twin.macro';
-import * as S from 'components/FilterByPart.styles';
-
 const CloseIcon = ({ className }) => (
   <svg width="12" height="12" viewBox="0 0 16 16" className={className}>
     <path
@@ -28,22 +25,21 @@ const BodyPart = ({
   remove,
 }) => (
   <button
-    tw="flex items-center justify-start w-full cursor-pointer p-2"
-    css={[S.baseButton, tw`pl-0`]}
+    className="flex items-center justify-start w-full cursor-pointer p-2 pl-0"
     onClick={onClick}
     title={partId}
   >
-    <AxieIconPart part={type} tw="mr-2" cls={cls} />
-    <span tw="flex flex-col items-start">
-      <span tw="text-white text-sm font-bold">{name || '???'}</span>
-      <span tw="text-gray-400 text-sm">{cardName || '-'}</span>
+    <AxieIconPart part={type} className="mr-2" cls={cls} />
+    <span className="flex flex-col items-start">
+      <span className="text-white text-sm font-bold">{name || '???'}</span>
+      <span className="text-gray-400 text-sm">{cardName || '-'}</span>
     </span>
-    {remove && <CloseIcon tw="ml-auto" />}
+    {remove && <CloseIcon className="ml-auto" />}
   </button>
 );
 
 const PartList = ({ parts, onClick, remove }) => (
-  <ul css={S.baseList}>
+  <ul className="p-0 list-none m-0">
     {parts.map((part) => (
       <li key={_get(part, 'partId')}>
         <BodyPart {...part} onClick={() => onClick(part)} remove={remove} />
@@ -86,22 +82,22 @@ const FilterByPart = ({ selected, onAdd, onRemove }) => {
   });
 
   return (
-    <section tw="mb-4">
-      <h2 tw="text-gray-500 uppercase font-bold text-xs">Parts</h2>
-      <div tw="w-full mt-2 relative" ref={ref}>
+    <section className="mb-4">
+      <h2 className="text-gray-500 uppercase font-bold text-xs">Parts</h2>
+      <div className="w-full mt-2 relative" ref={ref}>
         <input
-          tw="px-3 py-2 w-full border transition border-gray-600 bg-gray-900 text-white placeholder-gray-600"
+          className="px-3 py-2 w-full border transition border-gray-600 bg-gray-900 text-white placeholder-gray-600"
           placeholder="Search parts and abilities"
           value={search || ''}
           onChange={(e) => setSearch(_get(e, 'target.value'))}
           onFocus={() => setShowList(true)}
         />
         {showList && (
-          <div tw="transition-opacity absolute top-full left-0 right-0 bg-gray-900 border-gray-600">
-            <div tw="overflow-y-auto w-full h-80">
+          <div className="transition-opacity absolute top-full left-0 right-0 bg-gray-900 border-gray-600">
+            <div className="overflow-y-auto w-full h-80">
               {Object.entries(_groupBy(list, 'type')).map(([type, parts]) => (
-                <section tw="px-3 pb-4" key={type}>
-                  <h3 tw="mt-4 uppercase text-xs text-gray-500 font-bold leading-tight">
+                <section className="px-3 pb-4" key={type}>
+                  <h3 className="mt-4 uppercase text-xs text-gray-500 font-bold leading-tight">
                     {type}
                   </h3>
                   <PartList parts={parts} onClick={addPart} />
@@ -111,7 +107,7 @@ const FilterByPart = ({ selected, onAdd, onRemove }) => {
           </div>
         )}
       </div>
-      <div tw="py-2 my-2 border-b border-gray-800">
+      <div className="py-2 my-2 border-b border-gray-800">
         <PartList
           parts={bodyParts.filter((part) =>
             selected.includes(_get(part, 'partId'))

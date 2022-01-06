@@ -1,10 +1,9 @@
 import React from 'react';
 import _get from 'lodash.get';
-import tw from 'twin.macro';
 
 const AxiePrice = ({ auction, className }) => (
-  <p tw="flex justify-center items-center" className={className}>
-    <span tw="pr-4">${_get(auction, 'currentPriceUSD')}</span>
+  <p className={`${className} flex justify-center items-center`}>
+    <span className="pr-4">${_get(auction, 'currentPriceUSD')}</span>
     <span>
       Ξ
       {(

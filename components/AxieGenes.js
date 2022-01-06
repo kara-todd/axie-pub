@@ -4,14 +4,11 @@ import _get from 'lodash.get';
 import AxieIconPart from 'components/axie-icon/AxieIconPart';
 import { parseGenes } from 'hooks/useGenes';
 
-import tw from 'twin.macro';
-import * as S from 'components/AxieGenes.styles';
-
 // const { AxieGene } = require('agp-npm/dist/axie-gene');
 
 const GeneCell = ({ partId, name, cls, bits, type }) => (
   <td
-    css={[S.borderBot]}
+    className="border-b border-white/10"
     style={{ color: `var(--color-${cls})` }}
     title={partId}
     data-cls={cls}
@@ -23,9 +20,9 @@ const GeneCell = ({ partId, name, cls, bits, type }) => (
 );
 
 const AxieParts = ({ parts, className }) => (
-  <table css={[S.textXs, S.borderCollapse]} className={className}>
+  <table className={`${className} text-xs border-collapse`}>
     <thead>
-      <tr css={S.textLeft}>
+      <tr className="text-left">
         <td></td>
         <th scope="col">D</th>
         <th scope="col">R1</th>
@@ -35,7 +32,11 @@ const AxieParts = ({ parts, className }) => (
     <tbody>
       {parts.map(([part, gene]) => (
         <tr key={part}>
-          <th css={[S.textLeft, S.borderBot, S.pl2]} title={part} scope="row">
+          <th
+            className="text-left border-b border-white/10 pl-2"
+            title={part}
+            scope="row"
+          >
             <AxieIconPart
               part={part}
               cls={_get(gene, 'd.cls', '')}
@@ -61,7 +62,7 @@ const AxieGenes = ({ genes, className }) => {
   // const traits = parts.map((part) => [part, _get(axieGene, part)]);
 
   return (
-    <div tw="flex flex-col">
+    <div className="flex flex-col">
       <section>
         <AxieParts
           parts={Object.entries(parseGenes(genes).parts)}
