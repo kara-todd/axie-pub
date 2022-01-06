@@ -1,7 +1,10 @@
+import React, { createContext } from 'react';
 import _get from 'lodash.get';
 import { useQuery, gql } from '@apollo/client';
 
 import _getArray from 'utis/get-array';
+
+const AxieListContext = createContext();
 
 const AXIE_LIST_QUERY = gql`
   query GetAxieBriefListGetAxieBriefList(
@@ -50,6 +53,7 @@ const AXIE_LIST_QUERY = gql`
 
 const useAxieList = (criteria) => {
   const { data, loading, error, fetchMore } = useQuery(AXIE_LIST_QUERY, {
+    notifyOnNetworkStatusChange: true,
     variables: {
       from: 0,
       size: 100,
@@ -74,6 +78,20 @@ const useAxieList = (criteria) => {
     axies,
     total: parseInt(_get(data, 'axies.total'), 10),
   };
+};
+
+export const AxieListProvder = () => {
+  const [criteria, setCriteria] = useState({});
+  const queryData = useAxieList(criteria);
+  const [list, setList] = useState(_get(queryData, 'axies'));
+
+  return (
+    <AxieListContext.Provider
+      value={{ criteria, setCriteria, list, setList, ...queryData }}
+    >
+      {children}
+    </AxieListContext.Provider>
+  );
 };
 
 export default useAxieList;

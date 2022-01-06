@@ -42,6 +42,7 @@ const useFilterByGene = (validParts) => {
   };
 
   return {
+    allowed: Array.isArray(validParts) && validParts.length,
     filterByGenes: enableFilter ? filterByGenes : noFilter,
     matchR1,
     matchR2,
