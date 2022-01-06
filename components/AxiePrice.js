@@ -2,7 +2,7 @@ import React from 'react';
 import _get from 'lodash.get';
 
 const AxiePrice = ({ auction, className }) => (
-  <p className="flex justify-center items-center" className={className}>
+  <p className={`${className} flex justify-center items-center`}>
     <span className="pr-4">${_get(auction, 'currentPriceUSD')}</span>
     <span>
       Ξ

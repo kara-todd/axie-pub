@@ -22,10 +22,7 @@ const RangeDot = ({ value, total, showLabel }) => (
 );
 
 const RangeLabel = ({ val, className }) => (
-  <div
-    className="absolute text-gray-400 -ml-1 bottom-0 -mb-6"
-    className={className}
-  >
+  <div className={`absolute text-gray-400 -ml-1 bottom-0 -mb-6 ${className}`}>
     {`${val}`}
   </div>
 );
@@ -47,8 +44,7 @@ const RangeSlider = ({
 
   return (
     <div
-      className="flex flex-col w-full justify-start items-start"
-      className={className}
+      className={`${className} flex flex-col w-full justify-start items-start`}
     >
       {(label || typeof formatLabel === 'function') && (
         <div className="text-gray-400 mb-2">
