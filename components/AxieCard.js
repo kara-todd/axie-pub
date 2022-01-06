@@ -6,8 +6,6 @@ import AxieIcon from 'components/axie-icon/AxieIcon';
 import AxiePrice from 'components/AxiePrice';
 import AxieStats from 'components/AxieStats';
 
-import * as S from 'components/AxieCard.styles';
-
 const HeartIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -23,66 +21,61 @@ const HeartIcon = (props) => (
   </svg>
 );
 
-const AxieCard = ({
-  auction,
-  breedCount,
-  class: axieClass,
-  genes,
-  id,
-  image,
-  name,
-  newGenes,
-  stats,
-  quality,
-}) => {
+const AxieImage = ({ id, image, name }) => (
+  <h2 className="m-0">
+    <a
+      className="flex flex-col items-center text-base"
+      href={`https://marketplace.axieinfinity.com/axie/${id}?referrer=axie.pub`}
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div className="flex items-center justify-center relative h-40 w-full">
+        <img
+          src={image}
+          className="absolute h-60 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          alt=""
+        />
+      </div>
+      {name}
+    </a>
+  </h2>
+);
+
+const AxieMarketInfo = ({ id, breedCount, quality, cls, auction }) => (
+  <div className="flex items-center w-full">
+    {quality && (
+      <abbr title="Quality" className="flex items-center px-2 pt-1">
+        <AxieIcon cls={cls} /> {quality}%
+      </abbr>
+    )}
+    <p className="flex items-center px-2 pt-1 m-0">
+      <HeartIcon height={16} width={16} className="pr-1" /> {breedCount}
+    </p>
+    <AxiePrice auction={auction} className="px-2 pt-1 m-0" />
+    <p
+      className="m-0 text-sm absolute top-0 right-0 p-2"
+      style={{ backgroundColor: `var(--color-${cls})` }}
+    >
+      {`#` + id}
+    </p>
+  </div>
+);
+
+const AxieCard = ({ class: axieClass, ...props }) => {
+  const { id } = props;
   const cls = (axieClass || 'uknown').toLowerCase();
 
   return (
-    <article key={id} css={[S.m0, S.borderGray3, S.cardBg, S.relative]}>
+    <article key={id} className="m-0 relative pt-0 bg-[rgba(255,255,255,0.05)]">
       <header
-        css={[S.flex, S.flexColRev, S.cardBorder, S.p0]}
+        className="flex flex-col-reverse p-0 border-t"
         style={{ borderColor: `var(--color-${cls})` }}
       >
-        <h2 css={S.m0}>
-          <a
-            css={[S.flex, S.flexCol, S.alignCenter, S.textBase]}
-            href={`https://marketplace.axieinfinity.com/axie/${id}?referrer=axie.pub`}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <div
-              className="flex items-center justify-center"
-              css={[S.relative, S.imageBox, S.w100]}
-            >
-              <img src={image} css={[S.absolute, S.axieImage]} alt="" />
-            </div>
-            {name}
-          </a>
-        </h2>
-        <div css={[S.flex, S.alignCenter, S.w100]}>
-          {quality && (
-            <abbr
-              title="Quality"
-              className="flex items-center"
-              css={[S.px2, S.pt1]}
-            >
-              <AxieIcon cls={cls} /> {quality}%
-            </abbr>
-          )}
-          <p css={[S.flex, S.alignCenter, S.px2, S.pt1, S.m0]}>
-            <HeartIcon height={16} width={16} css={S.pr1} /> {breedCount}
-          </p>
-          <AxiePrice auction={auction} css={[S.px2, S.pt1, S.m0]} />
-          <p
-            css={[S.m0, S.textSm, S.absolute, S.top0, S.right0, S.p2]}
-            style={{ backgroundColor: `var(--color-${cls})` }}
-          >
-            {`#` + id}
-          </p>
-        </div>
+        <AxieImage {...props} />
+        <AxieMarketInfo {...props} cls={cls} />
       </header>
-      <AxieStats stats={stats} />
-      <AxieGenes genes={genes} newGenes={newGenes} cls={cls} css={[S.w100]} />
+      <AxieStats {...props} />
+      <AxieGenes {...props} cls={cls} className="w-full" />
     </article>
   );
 };

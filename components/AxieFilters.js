@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 import _get from 'lodash.get';
 import _getArray from 'utis/get-array';
 
-import FilterByClass from './FilterByClass';
-import FilterByPart from './FilterByPart';
-import Select from './ui/Select';
-import Input from './ui/Input';
+import FilterByClass from 'components/FilterByClass';
+import FilterByPart from 'components/FilterByPart';
+import Select from 'components/ui/Select';
+import Input from 'components/ui/Input';
 
 import useFilterCriteria from 'hooks/useFilterCriteria';
 
@@ -77,7 +77,7 @@ const AxieFilters = ({ criteria, setCriteria }) => {
         />
       </div>
 
-      <section className="border-b border-gray-800 mb-4 pb-4">
+      <section className="border-b border-gray-800 mb-4 pb-4 grid grid-cols-2">
         <SelectFeatureCount label="Pureness" name="pureness" />
         <SelectFeatureCount label="Japanese" name="numJapan" />
         <SelectFeatureCount label="Mystic" name="numMystic" />

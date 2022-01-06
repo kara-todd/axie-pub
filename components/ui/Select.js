@@ -5,7 +5,10 @@ import _getArray from 'utis/get-array';
 
 const Select = ({ className, options, id, label, value, onChange }) => (
   <div className="col-span-6 sm:col-span-3" className={className}>
-    <label htmlFor={id} className="block text-sm font-medium text-gray-400">
+    <label
+      htmlFor={id}
+      className="block text-sm font-medium text-gray-400 mb-1"
+    >
       {label}
     </label>
     <select

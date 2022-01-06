@@ -6,8 +6,6 @@ import bodyParts from 'data/card-parts.json';
 
 import AxieIconPart from 'components/axie-icon/AxieIconPart';
 
-import * as S from 'components/FilterByPart.styles';
-
 const CloseIcon = ({ className }) => (
   <svg width="12" height="12" viewBox="0 0 16 16" className={className}>
     <path
@@ -28,7 +26,6 @@ const BodyPart = ({
 }) => (
   <button
     className="flex items-center justify-start w-full cursor-pointer p-2 pl-0"
-    css={S.baseButton}
     onClick={onClick}
     title={partId}
   >
@@ -42,7 +39,7 @@ const BodyPart = ({
 );
 
 const PartList = ({ parts, onClick, remove }) => (
-  <ul css={S.baseList}>
+  <ul className="p-0 list-none m-0">
     {parts.map((part) => (
       <li key={_get(part, 'partId')}>
         <BodyPart {...part} onClick={() => onClick(part)} remove={remove} />

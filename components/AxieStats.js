@@ -1,8 +1,6 @@
 import React from 'react';
 import _get from 'lodash.get';
 
-import * as S from 'components/AxieStats.styles';
-
 const StatIcon = ({ type, ...props }) => (
   <svg
     width="24"
@@ -52,21 +50,13 @@ const labels = {
 
 export const AxieStats = ({ stats, className }) => (
   <div
-    css={[
-      S.flex,
-      S.justifyCenter,
-      S.alignCenter,
-      S.borderBot,
-      S.borderTop,
-      S.my2,
-    ]}
-    className={className}
+    className={`${className} flex justify-center items-center border-y border-white/10 my-2`}
   >
     {statList.map((stat) => (
       <abbr
         key={stat}
         title={_get(labels, stat)}
-        css={[S.flex, S.justifyCenter, S.alignCenter, S.p2]}
+        className="flex justify-center items-center p-2"
       >
         <StatIcon type={stat} height={18} width={18} />
         &nbsp;
