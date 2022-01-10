@@ -1,49 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import _get from 'lodash.get';
 import _getArray from 'utis/get-array';
 
 import { parseGenes } from 'hooks/useGenes';
+import useAxieList from 'hooks/useAxieList';
 
 const slots = ['ears', 'eyes', 'horn', 'mouth', 'back', 'tail'];
 
-const checkSlot = ({ slot, validParts, genes, gene }) => {
-  const selected = validParts.filter((name) => name.includes(`${slot}-`));
-  const hasSelected = Array.isArray(selected) && selected.length;
-  return hasSelected
+const checkSlot = ({ slot, parts, genes, gene }) => {
+  const selected = parts.filter((name) => name.includes(`${slot}-`));
+  return Array.isArray(selected) && selected.length
     ? selected.includes(_get(genes, `parts.${slot}.${gene}.partId`))
     : true;
 };
 
-const checkGene = ({ validParts, genes, gene }) =>
-  slots.reduce(
-    (isValid, slot) => isValid && checkSlot({ slot, validParts, genes, gene }),
-    true
-  );
-
-const noFilter = () => true;
-
-const useFilterByGene = (validParts) => {
+const useFilterByGene = () => {
   const [matchR1, setMatchR1] = useState(false);
   const [matchR2, setMatchR2] = useState(false);
+  const { criteria, addFilter, removeFilter } = useAxieList();
 
-  const enableFilter =
-    Array.isArray(validParts) && validParts.length && (matchR1 || matchR2);
+  const parts = _getArray(criteria, 'parts').filter(
+    (partId) => !/^!/.test(partId)
+  );
+  const allowed = Array.isArray(parts) && parts.length;
 
-  const filterByGenes = (axie) => {
-    const genes = parseGenes(_get(axie, 'genes'));
-    const validR1 = matchR1
-      ? checkGene({ validParts, genes, gene: 'r1' })
-      : true;
-    const validR2 = matchR2
-      ? checkGene({ validParts, genes, gene: 'r2' })
-      : true;
-    return validR1 && validR2;
-  };
+  const filterR1 = allowed && matchR1;
+  const filterR2 = allowed && matchR2;
+
+  useEffect(() => {
+    if (filterR1) {
+      console.log(
+        'add filterR1',
+        addFilter('r1', () => true)
+      );
+    }
+  }, [filterR1, addFilter, removeFilter]);
 
   return {
-    allowed: Array.isArray(validParts) && validParts.length,
-    filterByGenes: enableFilter ? filterByGenes : noFilter,
+    allowed,
     matchR1,
     matchR2,
     setMatchR1,

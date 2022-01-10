@@ -1,97 +1,57 @@
-import React, { createContext } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import _get from 'lodash.get';
-import { useQuery, gql } from '@apollo/client';
 
 import _getArray from 'utis/get-array';
 
+import useAxieQuery from 'hooks/useAxieQuery';
+import useFilterCriteria from 'hooks/useFilterCriteria';
+
 const AxieListContext = createContext();
 
-const AXIE_LIST_QUERY = gql`
-  query GetAxieBriefListGetAxieBriefList(
-    $auctionType: AuctionType
-    $criteria: AxieSearchCriteria
-    $from: Int
-    $sort: SortBy
-    $size: Int
-    $owner: String
-  ) {
-    axies(
-      from: $from
-      size: $size
-      sort: $sort
-      owner: $owner
-      auctionType: $auctionType
-      criteria: $criteria
-      filterStuckAuctions: true
-    ) {
-      total
-      results {
-        id
-        genes
-        newGenes
-        name
-        class
-        breedCount
-        image
-        title
-        stats {
-          hp
-          morale
-          skill
-          speed
-        }
-        auction {
-          currentPrice
-          currentPriceUSD
-          __typename
-        }
-        __typename
-      }
-    }
-  }
-`;
+const useFilters = (axies) => {
+  const [filters, setFilters] = useState({});
 
-const useAxieList = (criteria) => {
-  const { data, loading, error, fetchMore } = useQuery(AXIE_LIST_QUERY, {
-    notifyOnNetworkStatusChange: true,
-    variables: {
-      from: 0,
-      size: 100,
-      sort: 'PriceAsc',
-      auctionType: 'Sale',
-      owner: null,
-      criteria,
-    },
-  });
+  const addFilter = (key, fn) => setFilters({ ...filters, [key]: fn });
+  const removeFilter = (key) => {
+    const { [key]: omit, ...rest } = filters;
+    setFilters(rest);
+  };
 
-  const axies = _getArray(data, 'axies.results');
+  const applyFilters = (axie) =>
+    Object.values(filters)
+      .filter((filter) => typeof filter === 'function')
+      .every((filter) => filter(axie));
 
   return {
-    loading,
-    error,
-    loadMore: async () =>
-      await fetchMore({
-        variables: {
-          from: axies.length,
-        },
-      }),
-    axies,
-    total: parseInt(_get(data, 'axies.total'), 10),
+    list: filters.length ? axies.filter(applyFilters) : axies,
+    addFilter,
+    removeFilter,
   };
 };
 
-export const AxieListProvder = () => {
-  const [criteria, setCriteria] = useState({});
-  const queryData = useAxieList(criteria);
-  const [list, setList] = useState(_get(queryData, 'axies'));
+export const AxieListProvider = ({ children }) => {
+  const [enableGenes, setEnableGenes] = useState(true);
+  const criteria = useFilterCriteria();
+  const queryData = useAxieQuery(_get(criteria, 'criteria', {}));
+  const filters = useFilters(_getArray(queryData, 'axies'));
+
+  console.log('filters', filters);
 
   return (
     <AxieListContext.Provider
-      value={{ criteria, setCriteria, list, setList, ...queryData }}
+      value={{
+        enableGenes,
+        setEnableGenes,
+        ...filters,
+        ...criteria,
+        ...queryData,
+      }}
     >
       {children}
     </AxieListContext.Provider>
   );
 };
+
+const useAxieList = () => useContext(AxieListContext);
 
 export default useAxieList;

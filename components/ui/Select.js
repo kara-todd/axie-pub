@@ -3,8 +3,16 @@ import React from 'react';
 import _get from 'lodash.get';
 import _getArray from 'utis/get-array';
 
-const Select = ({ className, options, id, label, value, onChange }) => (
-  <div className={`col-span-6 sm:col-span-3 ${className}`}>
+const Select = ({
+  className,
+  inputClass,
+  options,
+  id,
+  label,
+  value,
+  onChange,
+}) => (
+  <div className={className}>
     <label
       htmlFor={id}
       className="block text-sm font-medium text-gray-400 mb-1"
@@ -15,11 +23,18 @@ const Select = ({ className, options, id, label, value, onChange }) => (
       id={id}
       name={id}
       value={value}
-      className="px-3 py-2 border transition border-gray-600 bg-gray-900 text-white placeholder-gray-600"
+      className={[
+        'transition',
+        'border border-gray-600',
+        'px-3 py-2',
+        'bg-gray-900',
+        'text-white placeholder-gray-600',
+        inputClass,
+      ]
+        .filter((f) => f)
+        .join(' ')}
       onChange={(e) => {
-        const value =
-          e.target.value === 'any' ? 'any' : parseInt(e.target.value, 10);
-        onChange(value);
+        onChange(e.target.value);
       }}
     >
       {options.map((o) => (

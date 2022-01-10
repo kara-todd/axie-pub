@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { axieClasses } from 'components/FilterByClass';
+import { axieClasses } from 'components/filters/FilterByClass';
 
-const AxieIcon = ({ cls, className }) => {
+const AxieIcon = ({ cls, fill, className }) => {
   const available = axieClasses.map((val) => val.toLowerCase());
   const classType = cls.toLowerCase();
 
@@ -14,7 +14,7 @@ const AxieIcon = ({ cls, className }) => {
     <svg
       width="16"
       height="16"
-      fill={`var(--color-${classType})`}
+      fill={fill || `var(--color-${classType})`}
       viewBox="0 0 16 16"
       className={className}
     >

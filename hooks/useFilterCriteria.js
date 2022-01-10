@@ -30,7 +30,24 @@ const addCriteria = (state, { key, value }) => ({
 
 const removeCriteria = (state, { key, value }) => ({
   ...state,
-  [key]: getArray(state, key).filter((item) => item !== value),
+  [key]: getArray(state, key).filter(
+    (item) => item !== value && item !== `!${value}`
+  ),
+});
+
+const invertCriteria = (state, { key, value }) => ({
+  ...state,
+  [key]: getArray(state, key).map((item) => {
+    if (item === value) {
+      return `!${value}`;
+    }
+
+    if (item === `!${value}`) {
+      return `${value}`;
+    }
+
+    return item;
+  }),
 });
 
 const setCount = (state, { key, value }) => ({
@@ -40,7 +57,7 @@ const setCount = (state, { key, value }) => ({
 
 const setRange = (state, { key, value }) => ({
   ...state,
-  [key]: value.filter((value) => value !== 'any'),
+  [key]: value,
 });
 
 const valueIsArray = ({ value }) => Array.isArray(value);
@@ -60,16 +77,39 @@ const validate = (checks, handler) => (state, action) => {
 const handlers = {
   add: validate([keyIsValid], addCriteria),
   remove: validate([keyIsValid], removeCriteria),
+  invert: validate([keyIsValid], invertCriteria),
   setRange: validate([keyIsValid, valueIsArray], setRange),
   setCount: validate([keyIsValid], setCount),
 };
 
-const reducer = (state, action) =>
-  get(handlers, action.type, () => state)(state, action);
+// Cute but hard to read.
+// Maybe worth it if there are a lot of handlers down-the-line.
+
+// const dispatchers = (dispatch) =>
+//   Object.keys(handlers).reduce(
+//     (keys, handler) => ({
+//       ...keys,
+//       [handler]: (type) => (key) => (value) => dispatch({ type, key, value }),
+//     }),
+//     {}
+//   );
+
+const reducer = (state, action) => {
+  const handler = get(handlers, action.type);
+  return handler ? handler(state, action) : state;
+};
 
 const useFilterCriteria = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return [state, dispatch];
+
+  return {
+    criteria: state,
+    add: (key) => (value) => dispatch({ type: 'add', key, value }),
+    remove: (key) => (value) => dispatch({ type: 'remove', key, value }),
+    invert: (key) => (value) => dispatch({ type: 'invert', key, value }),
+    setRange: (key) => (value) => dispatch({ type: 'setRange', key, value }),
+    setCount: (key) => (value) => dispatch({ type: 'setCount', key, value }),
+  };
 };
 
 export default useFilterCriteria;

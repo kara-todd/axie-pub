@@ -8,7 +8,7 @@ const ToggleButton = ({ label, checked, onChange, className }) => {
   const posX = !isChecked ? 'translate-x-0' : 'translate-x-full';
 
   return (
-    <div className="flex items-center w-full">
+    <div className={`flex items-center w-full ${className}`}>
       <label className="flex items-center cursor-pointer">
         <div className="relative">
           <input

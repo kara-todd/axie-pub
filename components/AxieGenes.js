@@ -1,7 +1,7 @@
 import React from 'react';
 import _get from 'lodash.get';
 
-import AxieIconPart from 'components/axie-icon/AxieIconPart';
+import AxieTraitIcon from 'components/AxieTraitIcon';
 import { parseGenes } from 'hooks/useGenes';
 
 // const { AxieGene } = require('agp-npm/dist/axie-gene');
@@ -37,7 +37,7 @@ const AxieParts = ({ parts, className }) => (
             title={part}
             scope="row"
           >
-            <AxieIconPart
+            <AxieTraitIcon
               part={part}
               cls={_get(gene, 'd.cls', '')}
               width={28}

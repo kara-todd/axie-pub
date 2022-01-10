@@ -17,7 +17,7 @@ const partComponent = {
   tail: AxieIconTail,
 };
 
-const AxieIconPart = ({ part, cls, ...props }) => {
+const AxieTraitIcon = ({ part, cls, ...props }) => {
   const Component = _get(partComponent, part);
 
   if (!Component) {
@@ -31,4 +31,8 @@ const AxieIconPart = ({ part, cls, ...props }) => {
   );
 };
 
-export default AxieIconPart;
+AxieTraitIcon.defaultProps = {
+  cls: 'none',
+};
+
+export default AxieTraitIcon;
